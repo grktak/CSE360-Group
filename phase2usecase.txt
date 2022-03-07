@@ -1,0 +1,117 @@
+@startuml
+left to right direction
+actor "USER" as uzr
+actor "Customer" as cst
+actor "Manager" as mng
+rectangle Food-Ordering-WebApp {
+  usecase "Login" as UC1
+  usecase "View Menu" as UC2
+  usecase "Update Phone Number" as UC3
+  usecase "Update Payment Info" as UC4
+  usecase "Reorder Meal" as UC5
+  usecase "Add Item to Cart" as UC6
+  usecase "Continue to Checkout" as UC7
+  usecase "Submit Payment" as UC8
+  usecase "View Current Orders" as UC9
+  usecase "Edit Menu" as UC10
+  usecase "Add Item" as UC11
+  usecase "Remove Item" as UC12
+  usecase "Assign Coupon" as UC13
+  usecase "Verify Loyalty Status" as UC14
+  usecase "View All Customers" as UC15
+  usecase "Verify Login Info" as UC16
+  usecase "Create New Account" as UC17
+  usecase "Check User Permission" as UC18
+  usecase "Set Desired Item Quantity" as UC19
+  usecase "Update Desired Item Quantity" as UC20
+  usecase "Gather menu items from dataset" as UC21
+  usecase "Check for duplicates in set" as UC22
+ usecase "Update Customer Info" as UC23
+ usecase "Duplicate Error" as UC24
+ usecase "Invalid Input Error" as UC25
+ usecase "Verify menu items still exist" as UC26
+ usecase "Items no longer on menu/Out of stock Error" as UC27
+ usecase "Change Scene to Payment page" as UC28
+ usecase "Process Transaction" as UC29
+ usecase "Payment Failed Error" as UC30
+ usecase "Check for Duplicate menu items" as UC31
+ usecase "Duplicate menu item error" as UC32
+ usecase "Verify menu item exists" as UC33
+ usecase "Menu Item does not exist Error" as UC34
+ usecase "Retrieve order queue data" as UC35
+ usecase "Retrieve customer list" as UC36
+
+
+}
+
+cst --> uzr
+mng --> uzr
+
+/'login'/
+ uzr --> UC1 
+ UC1 ..> UC16 : <<Includes>>
+ UC1 ..> UC18 : <<Includes>>
+ UC1 <.. UC17 : <<Extends>>
+
+/'View menu'/
+ uzr --> UC2
+ UC2 ..> UC21 : <<Includes>>
+
+/'Customer Functions'/
+    
+   /'Update Customer Info'/
+    cst --> UC23
+    UC23 ..> UC22 : <<Includes>>
+    UC23 <.. UC24 : <<Extends>>
+    UC23 <.. UC25 : <<Extends>>
+   /'update phone number'/
+    UC23 <-- UC3
+   /'update payment info'/
+    UC23 <-- UC4
+ 
+
+   /'reorder meal'/
+    cst --> UC5
+    UC5 ..> UC26 : <<Includes>>
+    UC5 <.. UC27 : <<Extends>>
+
+
+   /'add item to cart'/
+    cst --> UC6
+    UC6 ..> UC19 : <<Includes>>
+    UC6 <.. UC20 : <<Extends>>
+
+   /'continue to checkout'/
+   cst --> UC7
+    UC7 ..> UC28 : <<Includes>
+
+   /'submit payment'/
+    cst --> UC8
+    UC8 ..> UC29 : <<Includes>>
+    UC8 <.. UC30 : <<Extends>>
+ 
+/' Manager Funtions '/
+
+ /'Edit Menu'/
+  mng --> UC10
+  UC10 <-- UC11
+  UC10 <-- UC12
+  UC11 ..> UC31 : <<Includes>>
+  UC11 <.. UC32 : <<Extends>>
+  UC12 ..> UC33 : <<Includes>>
+  UC12 <.. UC34 : <<Extends>>
+  
+/'View Orders'/
+  mng --> UC9
+  UC9 ..> UC35 : <<Includes>>
+
+/'View All Customers '/
+ mng --> UC15
+ UC15 ..> UC36 : <<Includes>>
+
+/'Assign Coupons'/
+ mng --> UC13
+ UC13 ..> UC14 : <<Includes>>
+
+
+@enduml
