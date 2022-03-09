@@ -20,7 +20,6 @@ rectangle Food-Ordering-WebApp {
   usecase "Verify Loyalty Status" as UC14
   usecase "View All Customers" as UC15
   usecase "Verify Login Info" as UC16
-  usecase "Create New Account" as UC17
   usecase "Check User Permission" as UC18
   usecase "Set Desired Item Quantity" as UC19
   usecase "Update Desired Item Quantity" as UC20
@@ -40,6 +39,10 @@ rectangle Food-Ordering-WebApp {
  usecase "Menu Item does not exist Error" as UC34
  usecase "Retrieve order queue data" as UC35
  usecase "Retrieve customer list" as UC36
+ usecase "Create New Account" as UC37
+ usecase "Check for Duplicate Account" as UC38
+ usecase "Add Account to Data Set" as UC39
+ usecase "Allow Login" as UC40
 
 
 }
@@ -51,7 +54,14 @@ mng --> uzr
  uzr --> UC1 
  UC1 ..> UC16 : <<Includes>>
  UC1 ..> UC18 : <<Includes>>
- UC1 <.. UC17 : <<Extends>>
+ UC1 <.. UC40 : <<Exends>>
+
+
+/'Create Account'/
+ uzr --> UC37
+ UC37 ..> UC38 : <<Includes>>
+ UC37 <.. UC39 : <<Extends>>
+ 
 
 /'View menu'/
  uzr --> UC2
@@ -112,6 +122,4 @@ mng --> uzr
 /'Assign Coupons'/
  mng --> UC13
  UC13 ..> UC14 : <<Includes>>
-
-
 @enduml
