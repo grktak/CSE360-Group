@@ -22,10 +22,7 @@ public class HomeSceneController {
 	@FXML private Label numberLabelHome;
 	@FXML private Label userLabelHome;
 	@FXML private Label userHomeMain;
-	@FXML private TextField newNumberField;
-	
-	@FXML private TextField newNumberField;
-	
+	@FXML private TextField newNumberField;	
 	 public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(getClass().getResource("home.fxml"));
@@ -49,9 +46,14 @@ public class HomeSceneController {
 	
 	public void updatePhoneNumber() throws IOException
     {
+		String oldNumber = LoggedInAccountData.loggedInCustomer.getPhoneNumber();
+		String newNumber = newNumberField.getText();
         LoggedInAccountData.loggedInCustomer.setPhoneNumber(newNumberField.getText());
         //Edit text file
+        UserNumberFileReader.updatePhoneNumberInFile(newNumber,oldNumber);
+        
         System.out.println("User Number was updated successfully");
+        
     }
 	
 }
