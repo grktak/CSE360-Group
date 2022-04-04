@@ -3,32 +3,40 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneContoller">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="HOME">
+            <Button mnemonicParsing="false" onAction="#switchToGuestHome" text="HOME">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <Button mnemonicParsing="false" text="MENU">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
@@ -49,24 +57,41 @@
                   <Insets left="200.0" right="200.0" top="80.0" />
                </VBox.margin>
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.6298811435699463" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
             <TextField alignment="CENTER" prefHeight="7.0" prefWidth="860.0" promptText="PHONE NUMBER">
                <VBox.margin>
                   <Insets left="200.0" right="200.0" top="30.0" />
                </VBox.margin>
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold Italic" size="17.0" />
                </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.6349745392799377" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Login">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToHome" text="Login">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
                <VBox.margin>
                   <Insets left="395.0" top="20.0" />
                </VBox.margin>
+               <effect>
+                  <DropShadow spread="0.51" />
+               </effect>
             </Button>
          </children>
       </VBox>

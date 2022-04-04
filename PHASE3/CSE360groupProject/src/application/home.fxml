@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,18 +14,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneContoller">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="HOME">
+            <Button mnemonicParsing="false" onAction="#switchToHome" text="HOME">
                <font>
                   <Font size="17.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <Button mnemonicParsing="false" text="MENU">
                <font>
@@ -32,6 +36,9 @@
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <Label text="WAIT TIME: X:XX">
                <font>
@@ -59,9 +66,64 @@
                <content>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <VBox layoutX="-3.0" prefHeight="411.0" prefWidth="860.0">
+                        <VBox layoutY="1.0" prefHeight="411.0" prefWidth="860.0">
                            <children>
-                              <Label text="USER" />
+                              <Label text="Username">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="20.0" />
+                                 </VBox.margin></Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Phone Number:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" top="15.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label text="XXX-XXX-XXXX">
+                                       <HBox.margin>
+                                          <Insets top="15.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField promptText="New Number? Type Here">
+                                       <HBox.margin>
+                                          <Insets left="100.0" right="20.0" top="15.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#editPhoneNumber" text="Edit Phone Number">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="15.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Label text="*" textFill="#f30101">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <Label text="*If you would like to chage your number please enter in the text box above without formatting (no hyphens or spaces required)" textFill="#ee1a1a" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" />
+                                 </VBox.margin>
+                              </Label>
                            </children>
                         </VBox>
                      </children>
@@ -70,7 +132,10 @@
           </Tab>
           <Tab text="Payment Information">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="-1.0" prefHeight="414.0" prefWidth="860.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Order History">
