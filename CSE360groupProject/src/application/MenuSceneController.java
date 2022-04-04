@@ -8,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -19,6 +19,11 @@ public class MenuSceneController {
 	private Parent root;
 	
 	@FXML private Text userLabelMenu;
+	@FXML private TextArea appetizerMenuTextArea;
+	@FXML private TextArea entreeMenuTextArea;
+	@FXML private TextArea spacialsMenuTextArea;
+	@FXML private TextArea desertMenuTextArea;
+	@FXML private TextArea drinkMenuTextArea;
 	
 	public void logOut(ActionEvent event) throws IOException
 	{
@@ -36,6 +41,17 @@ public class MenuSceneController {
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		
+		populateMenu();
+	}
+	
+	public void populateMenu()
+	{		
+		appetizerMenuTextArea.setText(LoggedInAccountData.appetizerMenu.getFormattedMenu());
+		entreeMenuTextArea.setText(LoggedInAccountData.entreeMenu.getFormattedMenu());
+		spacialsMenuTextArea.setText(LoggedInAccountData.spacialsMenu.getFormattedMenu());
+		desertMenuTextArea.setText(LoggedInAccountData.desertMenu.getFormattedMenu());
+		drinkMenuTextArea.setText(LoggedInAccountData.drinksMenu.getFormattedMenu());
 	}
 	
 }

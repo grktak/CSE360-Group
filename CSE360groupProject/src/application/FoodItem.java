@@ -34,6 +34,24 @@ public class FoodItem {
 	public String[] getIngredients() {
 		return ingredients;
 	}
+	
+	public String listIngredients()
+	{
+		String temp = "";
+		for(int i = 0; i < ingredients.length; i++)
+		{
+			if(i != ingredients.length - 1)
+			{
+				temp += ingredients[i] + ", ";
+			}
+			else
+			{
+				temp += ingredients[i];
+			}
+		}
+		
+		return temp;
+	}
 
 	public void setIngredients(String ingredients[]) {
 		this.ingredients = ingredients;

@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class Menu {
 
-	public static ArrayList<FoodItem> items = new ArrayList<FoodItem>();
-	public static int numOfAppetizers;
-	public static int numOfEntrees;
-	public static int numOfSpecials;
-	public static int numOfDesserts;
-	public static int numOfDrinks;
+	public ArrayList<FoodItem> items = new ArrayList<FoodItem>();
+	public int numOfAppetizers;
+	public int numOfEntrees;
+	public int numOfSpecials;
+	public int numOfDesserts;
+	public int numOfDrinks;
 	
-	public static void addItem(FoodItem item)
+	public void addItem(FoodItem item)
 	{
 		items.add(item);
 	}
 	
-	public static void removeItem(FoodItem item)
+	public void removeItem(FoodItem item)
 	{
 		items.remove(item);
 	}
 	
-	public static void editItem(FoodItem item, int price, String name, String ingredients[], int timeToMake)
+	public void editItem(FoodItem item, int price, String name, String ingredients[], int timeToMake)
 	{
 		removeItem(item);
 		item.setPrice(price);
@@ -29,5 +29,18 @@ public class Menu {
 		item.setIngredients(ingredients);
 		item.setTimeToMake(timeToMake);
 		addItem(item);
+	}
+	
+	public String getFormattedMenu()
+	{
+		StringBuilder fieldContent = new StringBuilder("");
+		for(int i = 0; i < items.size(); i++)
+		{
+			fieldContent.append(items.get(i).getName() + "\n" + "Ingredients: " + items.get(i).listIngredients()
+					+ "\n" + "Time to make: " + Integer.toString(items.get(i).getTimeToMake()) + "\n" + "$" + Integer.toString(items.get(i).getPrice()));
+			fieldContent.append("\n\n");
+		}
+		
+		return fieldContent.toString();
 	}
 }
