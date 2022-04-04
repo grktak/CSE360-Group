@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -15,14 +16,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerSceneController">
    <top>
       <HBox prefHeight="45.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Home" />
-            <Button mnemonicParsing="false" text="Menu" />
-            <Label text="Hello, User" />
-            <Button mnemonicParsing="false" text="Log Out" />
+            <Button mnemonicParsing="false" onAction="#switchToHomeNonValidate" text="Home" />
+            <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menu" />
+            <Label text="Hello, Manager User">
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin></Label>
+            <Button mnemonicParsing="false" onAction="#logOut" text="Log Out">
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin></Button>
          </children>
       </HBox>
    </top>
