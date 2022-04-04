@@ -22,6 +22,7 @@ public class HomeSceneController {
 	@FXML private Label numberLabelHome;
 	@FXML private Label userLabelHome;
 	@FXML private Label userHomeMain;
+	@FXML private TextField newNumberField;
 	
 	@FXML private TextField newNumberField;
 	
