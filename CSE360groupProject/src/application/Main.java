@@ -23,7 +23,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		UserNumberFileReader.ReadFile();
+		UserNumberFileReader.ReadUserNumbersFile();
 		launch(args);
 	}
 }

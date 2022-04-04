@@ -17,7 +17,7 @@ public class Customer extends User{
 	public Customer(String user, String number)
 	{
 		super(user, number);
-		this.creditInfo = new CreditCard("1234567891011121314", "Default Card Name", "X/X", "XXX", "Default Billing Address"); 
+		this.creditInfo = new CreditCard("1234567891011121314", "X/X", "XXX"); 
 	}
 	
 	public CreditCard getCreditInfo() {

@@ -1,7 +1,10 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -14,7 +17,7 @@ public class UserNumberFileReader {
 	@SuppressWarnings("unused")
 	private static boolean fileIsEmpty;
 	
-	public static void ReadFile()
+	public static void ReadUserNumbersFile()
 	{
 		File myObj = new File("UserNumbers.txt");
 		try {
@@ -82,6 +85,47 @@ public class UserNumberFileReader {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static void updatePhoneNumberInFile(String newNum, String oldNum)
+	{
+		 	File myObj = new File("UserNumbers.txt");
+	        String oldContent = "";
+	        BufferedReader reader = null;	         
+	        FileWriter writer = null;
+	         
+	        try
+	        {
+	            reader = new BufferedReader(new FileReader(myObj));	             
+	            //Reading all lines of myObj and storing them in old content	             
+	            String line = reader.readLine();
+	            while (line != null) 
+	            {
+	                oldContent = oldContent + line + System.lineSeparator();
+	                line = reader.readLine();
+	            }
+	            //Replacing the phone numbers 
+	            String newContent = oldContent.replaceAll(oldNum, newNum);
+	            //ReWriting to file w/ new phone number
+	            writer = new FileWriter(myObj);
+	            writer.write(newContent);
+	        }
+	        catch (IOException e)
+	        {
+	            e.printStackTrace();
+	        }
+	        finally
+	        {
+	            try
+	            { 
+	                reader.close();
+	                writer.close();
+	            } 
+	            catch (IOException e) 
+	            {
+	                e.printStackTrace();
+	            }
+	        }	
 	}
 	
 }
