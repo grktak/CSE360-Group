@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,6 +24,7 @@ public class HomeSceneController {
 	@FXML private Label userLabelHome;
 	@FXML private Label userHomeMain;
 	@FXML private TextField newNumberField;
+	@FXML private TextArea orderHistoryTextArea;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -78,11 +80,18 @@ public class HomeSceneController {
         
     }
 	
+	public void populateOrderHistory()
+	{		
+		orderHistoryTextArea.setText(LoggedInAccountData.loggedInCustomer.getFormattedOrderHistory());
+	}
+	
 	public void initData()
 	{
 		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
 		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		
+		populateOrderHistory();
 	}
 	
 }
