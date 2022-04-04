@@ -17,7 +17,7 @@ public class UserNumberFileReader {
 	@SuppressWarnings("unused")
 	private static boolean fileIsEmpty;
 	
-	public static void ReadFile()
+	public static void ReadUserNumbersFile()
 	{
 		File myObj = new File("UserNumbers.txt");
 		try {
