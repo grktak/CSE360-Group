@@ -46,6 +46,7 @@ private boolean isManagerLogin = false;
 	 {
 		 if(isManagerLogin)
 		 {
+			 System.out.println("Manager login");
 			 updateLoggedInAccountData(usernameField.getText(), numberField.getText());
 			 
 			 FXMLLoader loader = new FXMLLoader();
@@ -78,7 +79,7 @@ private boolean isManagerLogin = false;
  private boolean validateLogin()
  {	 
 	 //Hard coded manager logins
-	 if(usernameField.getText().equals("manager") && usernameField.getText().equals("123456789"))
+	 if(usernameField.getText().equals("manager") && numberField.getText().equals("123456789"))
 	 {
 		 isManagerLogin = true;
 		 return true;
