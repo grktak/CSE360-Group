@@ -22,7 +22,8 @@ public class HomeSceneController {
 	@FXML private Label numberLabelHome;
 	@FXML private Label userLabelHome;
 	@FXML private Label userHomeMain;
-	@FXML private TextField newNumberField;	
+	@FXML private TextField newNumberField;
+	
 	 public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(getClass().getResource("home.fxml"));
@@ -36,12 +37,18 @@ public class HomeSceneController {
 		 stage.setScene(scene);
 		 stage.show(); 
 	}
-	
-	public void initData()
+	 
+	public void logOut(ActionEvent event) throws IOException
 	{
-		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
-		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
-		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		root = FXMLLoader.load(getClass().getResource("login.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		
+		LoggedInAccountData.cachedCustomers.add(LoggedInAccountData.loggedInCustomer);
+		LoggedInAccountData.loggedInCustomer = null;
+		
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	public void updatePhoneNumber() throws IOException
@@ -55,5 +62,12 @@ public class HomeSceneController {
         System.out.println("User Number was updated successfully");
         
     }
+	
+	public void initData()
+	{
+		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
+		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+	}
 	
 }

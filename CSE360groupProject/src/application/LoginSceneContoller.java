@@ -82,7 +82,28 @@ private Parent root;
  
  private void updateLoggedInAccountData(String username, String number)
  {
-	 LoggedInAccountData.loggedInCustomer = new Customer(username, number);
+	 boolean userAlreadyExists = false;
+	 int savedIndex = 0;
+	 
+	 for(int i = 0; i < LoggedInAccountData.cachedCustomers.size(); i++)
+	 {
+		 if(LoggedInAccountData.cachedCustomers.get(i).getUserName().equals(username))
+		 {
+			 userAlreadyExists = true;
+			 savedIndex = i;
+		 }
+	 }
+	 
+	 if(userAlreadyExists)
+	 {
+		 System.out.println("Grabbing cached user.");
+		 LoggedInAccountData.loggedInCustomer = LoggedInAccountData.cachedCustomers.get(savedIndex);
+	 }
+	 else
+	 {
+		 System.out.println("User doesn't exist in cache");
+		 LoggedInAccountData.loggedInCustomer = new Customer(username, number);
+	 }
  }
  
 }

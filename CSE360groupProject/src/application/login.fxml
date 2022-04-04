@@ -24,23 +24,12 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="MENU">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" top="20.0" />
-               </HBox.margin>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Button>
             <ImageView fitHeight="200.0" fitWidth="200.0">
                <image>
                   <Image url="@Logo.png" />
                </image>
                <HBox.margin>
-                  <Insets left="235.0" top="20.0" />
+                  <Insets left="340.0" top="20.0" />
                </HBox.margin>
             </ImageView>
          </children>
