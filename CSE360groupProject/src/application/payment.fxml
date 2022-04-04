@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentSceneController">
    <left>
       <VBox prefHeight="360.0" prefWidth="161.0" style="-fx-background-color: #cc0000c1;" BorderPane.alignment="CENTER">
          <children>
@@ -30,11 +30,11 @@
    <top>
       <HBox prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Home" />
-            <Button mnemonicParsing="false" text="Menu" />
+            <Button mnemonicParsing="false" onAction="#switchToHomeNonValidate" text="Home" />
+            <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menu" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wait List:" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, User" />
-            <Button mnemonicParsing="false" text="Log Out" />
+            <Text fx:id="userLabelMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, User" />
+            <Button mnemonicParsing="false" onAction="#logOut" text="Log Out" />
          </children>
       </HBox>
    </top>

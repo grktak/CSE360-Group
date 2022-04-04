@@ -62,6 +62,9 @@ public class HomeSceneController {
 		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		 scene = new Scene(root);
 		 
+		 PaymentSceneController controller = loader.getController();
+		 controller.initData();
+		 
 		 stage.setScene(scene);
 		 stage.show(); 
 	}
