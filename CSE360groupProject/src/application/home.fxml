@@ -101,7 +101,7 @@
                                           <Font size="17.0" />
                                        </font>
                                     </Label>
-                                    <TextField promptText="New Number? Type Here">
+                                    <TextField fx:id="newNumberField" promptText="New Number? Type Here">
                                        <HBox.margin>
                                           <Insets left="100.0" right="20.0" top="15.0" />
                                        </HBox.margin>
@@ -109,7 +109,7 @@
                                           <Font size="17.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onAction="#switchToHomeNonValidate" text="Edit Phone Number">
+                                    <Button mnemonicParsing="false" onAction="#updatePhoneNumber" text="Edit Phone Number">
                                        <font>
                                           <Font size="17.0" />
                                        </font>

@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class HomeSceneController {
@@ -21,6 +22,8 @@ public class HomeSceneController {
 	@FXML private Label numberLabelHome;
 	@FXML private Label userLabelHome;
 	@FXML private Label userHomeMain;
+	
+	@FXML private TextField newNumberField;
 	
 	 public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -42,5 +45,12 @@ public class HomeSceneController {
 		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 	}
+	
+	public void updatePhoneNumber() throws IOException
+    {
+        LoggedInAccountData.loggedInCustomer.setPhoneNumber(newNumberField.getText());
+        //Edit text file
+        System.out.println("User Number was updated successfully");
+    }
 	
 }
