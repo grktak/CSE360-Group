@@ -37,7 +37,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" text="MENU">
+            <Button mnemonicParsing="false" onAction="#switchToMenu" text="MENU">
                <font>
                   <Font size="17.0" />
                </font>
