@@ -82,7 +82,7 @@ private Parent root;
  
  private void updateLoggedInAccountData(String username, String number)
  {
-	 LoggedInAccountData.loggedInUser = new User(username, number);
+	 LoggedInAccountData.loggedInCustomer = new Customer(username, number);
  }
  
 }

@@ -2,13 +2,13 @@ package application;
 
 public class CreditCard {
 
-	private int cardNumber;
+	private String cardNumber;
 	private String cardName;
-	private int cardExpiration;
-	private int cardCVC;
+	private String cardExpiration;
+	private String cardCVC;
 	private String billingAddress;
 	
-	public CreditCard(int cardNumber, String cardName, int cardExpiration, int cardCVC, String billingAddress)
+	public CreditCard(String cardNumber, String cardName, String cardExpiration, String cardCVC, String billingAddress)
 	{
 		setCardNumber(cardNumber);
 		setCardName(cardName);
@@ -17,11 +17,11 @@ public class CreditCard {
 		setBillingAddress(billingAddress);
 	}
 	
-	public int getCardNumber() {
+	public String getCardNumber() {
 		return cardNumber;
 	}
 	
-	public void setCardNumber(int cardNumber) {
+	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 	
@@ -33,19 +33,19 @@ public class CreditCard {
 		this.cardName = cardName;
 	}
 
-	public int getCardExpiration() {
+	public String getCardExpiration() {
 		return cardExpiration;
 	}
 
-	public void setCardExpiration(int cardExpiration) {
+	public void setCardExpiration(String cardExpiration) {
 		this.cardExpiration = cardExpiration;
 	}
 
-	public int getCardCVC() {
+	public String getCardCVC() {
 		return cardCVC;
 	}
 
-	public void setCardCVC(int cardCVC) {
+	public void setCardCVC(String cardCVC) {
 		this.cardCVC = cardCVC;
 	}
 

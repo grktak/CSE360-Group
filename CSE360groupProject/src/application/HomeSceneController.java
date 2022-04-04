@@ -38,9 +38,9 @@ public class HomeSceneController {
 	
 	public void initData()
 	{
-		numberLabelHome.setText(LoggedInAccountData.loggedInUser.getFormattedNumber());
-		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInUser.getUserName());
-		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInUser.getUserName());
+		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
+		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 	}
 	
 }

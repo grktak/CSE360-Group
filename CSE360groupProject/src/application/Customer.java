@@ -2,15 +2,22 @@ package application;
 
 import java.util.ArrayList;
 
-public class Customer{
+public class Customer extends User{
 
 	private CreditCard creditInfo;
 	private boolean hasCoupon;
 	private ArrayList<FoodItem> favoriteOrders = new ArrayList<FoodItem>();
 
-	public Customer(CreditCard creditInfo)
+	public Customer(CreditCard creditInfo, String user, String number)
 	{
+		super(user, number);
 		this.creditInfo = creditInfo; 
+	}
+	
+	public Customer(String user, String number)
+	{
+		super(user, number);
+		this.creditInfo = new CreditCard("1234567891011121314", "Default Card Name", "X/X", "XXX", "Default Billing Address"); 
 	}
 	
 	public CreditCard getCreditInfo() {
