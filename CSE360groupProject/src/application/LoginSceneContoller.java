@@ -21,6 +21,8 @@ private Parent root;
 //Labels on login scene
 @FXML private TextField usernameField;
 @FXML private TextField numberField;
+
+private boolean isManagerLogin = false;
  
  public void switchToLogin(ActionEvent event) throws IOException {
 	  root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -42,28 +44,51 @@ private Parent root;
  public void switchToHomeValidate(ActionEvent event) throws IOException {
 	 if(validateLogin())
 	 {
-		 updateLoggedInAccountData(usernameField.getText(), numberField.getText());
-		 
-		 FXMLLoader loader = new FXMLLoader();
-		 loader.setLocation(getClass().getResource("home.fxml"));
-		 root = loader.load();
-		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		 scene = new Scene(root);
-		 
-		 HomeSceneController controller = loader.getController();
-		 controller.initData();
-		 
-		 stage.setScene(scene);
-		 stage.show(); 
+		 if(isManagerLogin)
+		 {
+			 updateLoggedInAccountData(usernameField.getText(), numberField.getText());
+			 
+			 FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("manager.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		 }else
+		 {
+			 updateLoggedInAccountData(usernameField.getText(), numberField.getText());
+			 
+			 FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("home.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 HomeSceneController controller = loader.getController();
+			 controller.initData();
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		 }
 	 }
 }
  
  private boolean validateLogin()
  {	 
+	 //Hard coded manager logins
+	 if(usernameField.getText().equals("manager") && usernameField.getText().equals("123456789"))
+	 {
+		 isManagerLogin = true;
+		 return true;
+	 }
+	 
 	 if(UserNumberFileReader.userToPhoneNumbers.containsKey(usernameField.getText()))
 	 {
 		 if(UserNumberFileReader.userToPhoneNumbers.get(usernameField.getText()).equals(numberField.getText()))
 		 {
+			 isManagerLogin = false;
 			 return true;
 		 }
 		 else
@@ -76,6 +101,7 @@ private Parent root;
 	 else
 	 {
 		 //Invalid username
+		 isManagerLogin = false;
 		 UserNumberFileReader.WriteNewUserAndNumber(usernameField.getText(), numberField.getText());
 		 return true;
 	 }
