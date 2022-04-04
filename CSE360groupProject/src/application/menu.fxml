@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -19,10 +20,18 @@
    <top>
       <HBox prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Home" />
-            <Button mnemonicParsing="false" text="Menu" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wait Time:" />
-            <Text fx:id="userLabelMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, User" />
+            <Button mnemonicParsing="false" onAction="#switchToHomeNonValidate" text="Home">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin></Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wait Time:">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Text>
+            <Text fx:id="userLabelMenu" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, User">
+               <HBox.margin>
+                  <Insets left="30.0" right="230.0" />
+               </HBox.margin></Text>
             <Button mnemonicParsing="false" onAction="#logOut" text="Log Out" />
          </children>
       </HBox>

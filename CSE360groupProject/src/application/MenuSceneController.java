@@ -38,6 +38,20 @@ public class MenuSceneController {
 		stage.show();
 	}
 	
+	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
+		 FXMLLoader loader = new FXMLLoader();
+		 loader.setLocation(getClass().getResource("home.fxml"));
+		 root = loader.load();
+		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		 scene = new Scene(root);
+		 
+		 HomeSceneController controller = loader.getController();
+		 controller.initData();
+		 
+		 stage.setScene(scene);
+		 stage.show(); 
+	}
+	
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
