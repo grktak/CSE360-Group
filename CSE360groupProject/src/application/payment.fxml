@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="360.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" />
+            <TextArea prefHeight="343.0" prefWidth="162.0" />
+            <Label text="Total: $" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" text="Menu" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wait List:" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT CARD PAYMENT" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
+            <TextField />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Holder Name" />
+            <TextField />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="220.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Expiration" />
+                        <TextField prefHeight="26.0" prefWidth="142.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="218.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
+                        <TextField />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="220.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="BACK" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="166.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="SUBMIT PAYMENT" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
