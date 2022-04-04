@@ -75,8 +75,8 @@ private Parent root;
 	 else
 	 {
 		 //Invalid username
-		 System.out.println("Invalid username");
-		 return false;
+		 UserNumberFileReader.WriteNewUserAndNumber(usernameField.getText(), numberField.getText());
+		 return true;
 	 }
  }
  
