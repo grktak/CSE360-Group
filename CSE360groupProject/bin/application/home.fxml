@@ -153,7 +153,7 @@
                               </VBox>
                               <VBox prefHeight="414.0" prefWidth="356.0">
                                  <children>
-                                    <Button mnemonicParsing="false" text="Order Again" />
+                                    <Button mnemonicParsing="false" onAction="#switchToPayment" text="Order Again" />
                                  </children>
                               </VBox>
                            </children>

@@ -91,7 +91,7 @@
       <VBox prefHeight="358.0" prefWidth="169.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" />
-            <Button mnemonicParsing="false" text="Check Out" />
+            <Button mnemonicParsing="false" onAction="#switchToPayment" text="Check Out" />
             <Label text="Total: $" />
          </children>
       </VBox>
