@@ -52,6 +52,15 @@ public class FoodItem {
 		
 		return temp;
 	}
+	
+	public String getFormattedFoodItem()
+	{
+		StringBuilder fieldContent = new StringBuilder("");
+		fieldContent.append(getName() + "\n" + "$" + Integer.toString(getPrice()));
+		fieldContent.append("\n\n");
+		
+		return fieldContent.toString();
+	}
 
 	public void setIngredients(String ingredients[]) {
 		this.ingredients = ingredients;
