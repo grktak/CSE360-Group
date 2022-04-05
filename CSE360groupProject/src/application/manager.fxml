@@ -16,86 +16,167 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerSceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@../../../../Downloads/CSE360-Group-main/CSE360groupProject/bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <HBox prefHeight="45.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToHomeNonValidate" text="Home" />
-            <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menu" />
-            <Label text="Hello, Manager User">
+            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" stylesheets="@application.css" text="HOME" textFill="#cc0000">
                <HBox.margin>
-                  <Insets left="100.0" />
-               </HBox.margin></Label>
-            <Button mnemonicParsing="false" onAction="#logOut" text="Log Out">
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" text="MENU">
                <HBox.margin>
-                  <Insets left="200.0" />
-               </HBox.margin></Button>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Label text="Hello, Manager">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="420.0" top="26.0" />
+               </HBox.margin>
+            </Label>
+            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" text="LOG OUT">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="40.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </top>
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TabPane prefHeight="300.0" prefWidth="602.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="497.0" prefWidth="863.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab text="Current Orders">
+                <Tab style="-fx-background-color: white;" text="Current Orders">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea layoutY="-2.0" prefHeight="328.0" prefWidth="600.0" />
+                              <VBox layoutX="1.0" prefHeight="479.0" prefWidth="816.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Order Amount">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <TextArea prefHeight="457.0" prefWidth="720.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                 </children>
+                              </VBox>
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="Adjust Menu">
+                <Tab style="-fx-background-color: white;" text="Adjust Menu">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TabPane layoutY="2.0" prefHeight="325.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                              <TabPane layoutX="33.0" prefHeight="480.0" prefWidth="792.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
-                                  <Tab text="Add Item">
+                                  <Tab style="-fx-background-color: white;" text="Add Item">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="792.0">
                                              <children>
                                                 <VBox prefHeight="58.0" prefWidth="496.0">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                                                      <TextField prefHeight="26.0" prefWidth="407.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin></Text>
+                                                      <TextField prefHeight="26.0" prefWidth="407.0">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin></TextField>
                                                    </children>
+                                                   <padding>
+                                                      <Insets top="20.0" />
+                                                   </padding>
                                                 </VBox>
                                                 <HBox layoutY="58.0" prefHeight="64.0" prefWidth="600.0">
                                                    <children>
                                                       <VBox prefHeight="64.0" prefWidth="300.0">
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
-                                                            <TextField />
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin></Text>
+                                                            <TextField prefHeight="27.0" prefWidth="219.0">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin></TextField>
                                                          </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
                                                       </VBox>
                                                       <VBox prefHeight="64.0" prefWidth="300.0">
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cooking Time" />
-                                                            <TextField />
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cooking Time">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin></Text>
+                                                            <TextField prefHeight="27.0" prefWidth="202.0">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin></TextField>
                                                          </children>
+                                                         <padding>
+                                                            <Insets top="19.0" />
+                                                         </padding>
                                                       </VBox>
                                                    </children>
                                                 </HBox>
                                                 <VBox layoutY="122.0" prefHeight="101.0" prefWidth="600.0">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients List" />
-                                                      <TextArea prefHeight="67.0" prefWidth="600.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients List">
+                                                         <VBox.margin>
+                                                            <Insets top="20.0" />
+                                                         </VBox.margin></Text>
+                                                      <TextArea prefHeight="67.0" prefWidth="600.0">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin></TextArea>
                                                    </children>
                                                 </VBox>
-                                                <VBox layoutY="224.0" prefHeight="66.0" prefWidth="600.0">
+                                                <VBox layoutY="224.0" prefHeight="150.0" prefWidth="600.0">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Description" />
-                                                      <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Description">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin></Text>
+                                                      <TextArea prefHeight="86.0" prefWidth="600.0" />
                                                    </children>
+                                                   <padding>
+                                                      <Insets top="20.0" />
+                                                   </padding>
                                                 </VBox>
                                              </children>
+                                             <opaqueInsets>
+                                                <Insets top="50.0" />
+                                             </opaqueInsets>
+                                             <padding>
+                                                <Insets top="40.0" />
+                                             </padding>
                                           </AnchorPane>
                                     </content>
                                   </Tab>
-                                  <Tab text="Delete Item">
+                                  <Tab style="-fx-background-color: white;" text="Delete Item">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
@@ -109,7 +190,10 @@
                                                       </VBox>
                                                       <VBox prefHeight="91.0" prefWidth="200.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" text="Delete Item" />
+                                                            <Button mnemonicParsing="false" text="Delete Item">
+                                                               <VBox.margin>
+                                                                  <Insets left="20.0" top="15.0" />
+                                                               </VBox.margin></Button>
                                                          </children>
                                                       </VBox>
                                                    </children>
@@ -120,36 +204,54 @@
                                   </Tab>
                                 </tabs>
                               </TabPane>
+                              <VBox layoutX="-1.0" prefHeight="33.0" prefWidth="34.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
-                  <Tab text="Customer Rewards">
+                  <Tab style="-fx-background-color: white;" text="Customer Rewards">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <HBox prefHeight="328.0" prefWidth="600.0">
+                              <VBox layoutX="544.0" prefHeight="472.0" prefWidth="272.0">
                                  <children>
-                                    <VBox prefHeight="328.0" prefWidth="333.0">
+                                    <VBox prefHeight="74.0" prefWidth="270.0" />
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
                                        <children>
-                                          <TextArea prefHeight="326.0" prefWidth="332.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Loyal Customers by Order Amount">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <TextField promptText="Order Amount">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Search">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Button id="greenButton" mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="Give out coupon">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="30.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Button>
                                        </children>
-                                    </VBox>
-                                    <VBox prefHeight="328.0" prefWidth="272.0">
-                                       <children>
-                                          <VBox prefHeight="74.0" prefWidth="270.0" />
-                                          <VBox prefHeight="200.0" prefWidth="100.0">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Loyal Customers by order #" />
-                                                <TextField />
-                                                <Button mnemonicParsing="false" text="Search" />
-                                                <Button mnemonicParsing="false" text="Give out coupon" />
-                                             </children>
-                                          </VBox>
-                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="60.0" />
+                                       </VBox.margin>
                                     </VBox>
                                  </children>
-                              </HBox>
+                              </VBox>
+                              <TextArea layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="535.0" />
                            </children>
                         </AnchorPane>
                      </content>
@@ -159,4 +261,7 @@
          </children>
       </HBox>
    </center>
+   <left>
+      <VBox prefHeight="478.0" prefWidth="11.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" BorderPane.alignment="CENTER" />
+   </left>
 </BorderPane>
