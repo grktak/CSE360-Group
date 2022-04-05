@@ -39,24 +39,13 @@
                   <Insets top="20.0" />
                </HBox.margin>
             </Button>
-            <Label fx:id="waitTimeLabel" prefHeight="22.0" prefWidth="183.0" text="WAIT TIME: X:XX">
+            <Label fx:id="waitTimeLabel" prefHeight="22.0" prefWidth="478.0" text="WAIT TIME: X:XX">
                <font>
                   <Font size="17.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" top="25.0" />
                </HBox.margin>
-            </Label>
-            <Label fx:id="userLabelHome" prefHeight="22.0" prefWidth="123.0" text="Hello, User">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="200.0" top="27.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
             </Label>
             <Button id="navButton" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: white;" stylesheets="@application.css" text="LOG OUT">
                <font>
@@ -185,7 +174,4 @@
          </opaqueInsets>
       </TabPane>
    </center>
-   <left>
-      <VBox prefHeight="479.0" prefWidth="11.0" style="-fx-background-color: #cc0000c1;" BorderPane.alignment="CENTER" />
-   </left>
 </BorderPane>
