@@ -8,12 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-<<<<<<< Updated upstream
 import javafx.scene.control.TextArea;
-=======
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
->>>>>>> Stashed changes
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -27,12 +24,9 @@ public class PaymentSceneController {
 	 @FXML private Text cardNumberText;
 	 @FXML private Text cardExpirationText;
 	 @FXML private Text cvcText;
-<<<<<<< Updated upstream
 	 @FXML private TextArea cartTextArea;
-=======
 	 @FXML private Button submitPaymentBtn;
 	 @FXML private Label waitListLabel;
->>>>>>> Stashed changes
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();

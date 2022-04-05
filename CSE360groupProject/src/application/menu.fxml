@@ -121,7 +121,7 @@
                         <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartEntree" text="Remove Item" />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartEntree" text="Add Item" />
-                        <ComboBox fx:id="cBoxEntree" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox fx:id="cBoxEntree" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                      </children>
                   </AnchorPane>
             </content>
@@ -131,7 +131,7 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
-                        <ComboBox fx:id="cBoxSpacial" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox fx:id="cBoxSpacial" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartSpacial" text="Add Item" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartSpacial" text="Remove Item" />
                      </children>
@@ -145,7 +145,7 @@
                         <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDessert" text="Remove Item" />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDessert" text="Add Item" />
-                        <ComboBox fx:id="cBoxDessert" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox fx:id="cBoxDessert" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                      </children>
                   </AnchorPane>
                </content>
@@ -155,7 +155,7 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
-                        <ComboBox fx:id="cBoxDrink" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox fx:id="cBoxDrink" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDrink" text="Add Item" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDrink" text="Remove Item" />
                      </children>

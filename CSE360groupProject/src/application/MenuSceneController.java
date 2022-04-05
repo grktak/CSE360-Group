@@ -159,157 +159,189 @@ public class MenuSceneController {
 	
 	public void addItemToCartAppetizer() throws IOException
 	{
-		//Get the item that we are adding
-		String selectedItemName = cBoxAppetizer.getValue();
-		FoodItem itemToAdd = LoggedInAccountData.appetizerMenu.getItemByName(selectedItemName);
+		if(cBoxAppetizer.getValue() != null)
+		{
+			//Get the item that we are adding
+			String selectedItemName = cBoxAppetizer.getValue();
+			FoodItem itemToAdd = LoggedInAccountData.appetizerMenu.getItemByName(selectedItemName);
 		
-		//update the logged in users cart by adding the item
-		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+			//update the logged in users cart by adding the item
+			System.out.println("Adding item to cart");
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
 		
-		//display the added item in the cart area
-		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			//display the added item in the cart area
+			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		}
 	}
 	
 	public void addItemToCartEntree() throws IOException
 	{
 		//Get the item that we are adding
-		String selectedItemName = cBoxEntree.getValue();
-		FoodItem itemToAdd = LoggedInAccountData.entreeMenu.getItemByName(selectedItemName);
-		
-		//update the logged in users cart by adding the item
-		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
-		
-		//display the added item in the cart area
-		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		if(cBoxEntree.getValue() != null)
+		{
+			String selectedItemName = cBoxEntree.getValue();
+			
+			FoodItem itemToAdd = LoggedInAccountData.entreeMenu.getItemByName(selectedItemName);
+			
+			//update the logged in users cart by adding the item
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+			
+			//display the added item in the cart area
+			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		}
 	}
 	
 	public void addItemToCartSpacial() throws IOException
 	{
-		//Get the item that we are adding
-		String selectedItemName = cBoxSpacial.getValue();
-		FoodItem itemToAdd = LoggedInAccountData.spacialsMenu.getItemByName(selectedItemName);
+		if(cBoxSpacial.getValue() != null)
+		{
+			//Get the item that we are adding
+			String selectedItemName = cBoxSpacial.getValue();
+			FoodItem itemToAdd = LoggedInAccountData.spacialsMenu.getItemByName(selectedItemName);
 		
-		//update the logged in users cart by adding the item
-		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+			//update the logged in users cart by adding the item
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
 		
-		//display the added item in the cart area
-		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			//display the added item in the cart area
+			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		}
 	}
 	
 	public void addItemToCartDessert() throws IOException
 	{
-		//Get the item that we are adding
-		String selectedItemName = cBoxDessert.getValue();
-		FoodItem itemToAdd = LoggedInAccountData.desertMenu.getItemByName(selectedItemName);
+		if(cBoxDessert.getValue() != null)
+		{
+			//Get the item that we are adding
+			String selectedItemName = cBoxDessert.getValue();
+			FoodItem itemToAdd = LoggedInAccountData.desertMenu.getItemByName(selectedItemName);
 		
-		//update the logged in users cart by adding the item
-		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+			//update the logged in users cart by adding the item
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
 		
-		//display the added item in the cart area
-		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			//display the added item in the cart area
+			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		}
 	}
 	
 	public void addItemToCartDrink() throws IOException
 	{
-		//Get the item that we are adding
-		String selectedItemName = cBoxDrink.getValue();
-		FoodItem itemToAdd = LoggedInAccountData.drinksMenu.getItemByName(selectedItemName);
+		if(cBoxDrink.getValue() != null)
+		{
+			//Get the item that we are adding
+			String selectedItemName = cBoxDrink.getValue();
+			FoodItem itemToAdd = LoggedInAccountData.drinksMenu.getItemByName(selectedItemName);
 		
-		//update the logged in users cart by adding the item
-		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+			//update the logged in users cart by adding the item
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
 		
-		//display the added item in the cart area
-		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			//display the added item in the cart area
+			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+		}
 	}
 	
 	public void removeItemFromCartAppetizer() throws IOException
 	{
-		//Get selected item to remove
-		String selectedItemName = cBoxAppetizer.getValue();
-		FoodItem itemToRemove = LoggedInAccountData.appetizerMenu.getItemByName(selectedItemName);
-		
-		//Remove the item from the users cart
-		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+		if(cBoxAppetizer.getValue() != null)
 		{
-			LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
-			System.out.println("Removing item from cart.");
-		}
+			//Get selected item to remove
+			String selectedItemName = cBoxAppetizer.getValue();
+			FoodItem itemToRemove = LoggedInAccountData.appetizerMenu.getItemByName(selectedItemName);
 		
-		//Update the cart area display
-		cartTextArea.setText("");
-		cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			//Remove the item from the users cart
+			if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
+				System.out.println("Removing item from cart.");
+			}
+		
+			//Update the cart area display
+			cartTextArea.setText("");
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 	public void removeItemFromCartEntree() throws IOException
 	{
-		//Get selected item to remove
-		String selectedItemName = cBoxEntree.getValue();
-		FoodItem itemToRemove = LoggedInAccountData.entreeMenu.getItemByName(selectedItemName);
-		
-		//Remove the item from the users cart
-		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+		if(cBoxEntree.getValue() != null)
 		{
-			LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
-			System.out.println("Removing item from cart.");
-		}
+			//Get selected item to remove
+			String selectedItemName = cBoxEntree.getValue();
+			FoodItem itemToRemove = LoggedInAccountData.entreeMenu.getItemByName(selectedItemName);
 		
-		//Update the cart area display
-		cartTextArea.setText("");
-		cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			//Remove the item from the users cart
+			if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
+				System.out.println("Removing item from cart.");
+			}
+		
+			//Update the cart area display
+			cartTextArea.setText("");
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 	public void removeItemFromCartSpacial() throws IOException
 	{
-		//Get selected item to remove
-		String selectedItemName = cBoxSpacial.getValue();
-		FoodItem itemToRemove = LoggedInAccountData.spacialsMenu.getItemByName(selectedItemName);
-		
-		//Remove the item from the users cart
-		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+		if(cBoxSpacial.getValue() != null)
 		{
-			LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
-			System.out.println("Removing item from cart.");
-		}
+			//Get selected item to remove
+			String selectedItemName = cBoxSpacial.getValue();
+			FoodItem itemToRemove = LoggedInAccountData.spacialsMenu.getItemByName(selectedItemName);
 		
-		//Update the cart area display
-		cartTextArea.setText("");
-		cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			//Remove the item from the users cart
+			if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
+				System.out.println("Removing item from cart.");
+			}
+		
+			//Update the cart area display
+			cartTextArea.setText("");
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 	public void removeItemFromCartDessert() throws IOException
 	{
-		//Get selected item to remove
-		String selectedItemName = cBoxDessert.getValue();
-		FoodItem itemToRemove = LoggedInAccountData.desertMenu.getItemByName(selectedItemName);
-		
-		//Remove the item from the users cart
-		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+		if(cBoxDessert.getValue() != null)
 		{
-			LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
-			System.out.println("Removing item from cart.");
-		}
+			//Get selected item to remove
+			String selectedItemName = cBoxDessert.getValue();
+			FoodItem itemToRemove = LoggedInAccountData.desertMenu.getItemByName(selectedItemName);
 		
-		//Update the cart area display
-		cartTextArea.setText("");
-		cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			//Remove the item from the users cart
+			if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
+				System.out.println("Removing item from cart.");
+			}
+		
+			//Update the cart area display
+			cartTextArea.setText("");
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 	public void removeItemFromCartDrink() throws IOException
 	{
-		//Get selected item to remove
-		String selectedItemName = cBoxDrink.getValue();
-		FoodItem itemToRemove = LoggedInAccountData.drinksMenu.getItemByName(selectedItemName);
-		
-		//Remove the item from the users cart
-		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+		if(cBoxDrink.getValue() != null)
 		{
-			LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
-			System.out.println("Removing item from cart.");
-		}
+			//Get selected item to remove
+			String selectedItemName = cBoxDrink.getValue();
+			FoodItem itemToRemove = LoggedInAccountData.drinksMenu.getItemByName(selectedItemName);
 		
-		//Update the cart area display
-		cartTextArea.setText("");
-		cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			//Remove the item from the users cart
+			if(LoggedInAccountData.loggedInCustomer.getCustomerCart().itemExistsInCart(itemToRemove))
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().removeItemFromCart(itemToRemove);
+				System.out.println("Removing item from cart.");
+			}
+		
+			//Update the cart area display
+			cartTextArea.setText("");
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 }
