@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -21,6 +22,7 @@ public class PaymentSceneController {
 	 @FXML private Text cardNumberText;
 	 @FXML private Text cardExpirationText;
 	 @FXML private Text cvcText;
+	 @FXML private TextArea cartTextArea;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -64,12 +66,21 @@ public class PaymentSceneController {
 		stage.show();
 	}
 	
+	public void populateCart()
+	{		
+		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().isEmpty() == false)
+		{
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
+	}
+	
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
+		populateCart();
 	}
 	
 }
