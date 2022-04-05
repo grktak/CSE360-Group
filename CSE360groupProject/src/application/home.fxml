@@ -62,7 +62,7 @@
                   <Insets left="40.0" />
                </padding>
             </Label>
-            <Button id="navButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" style="-fx-background-color: white;" stylesheets="@../../../../Downloads/CSE360-Group-main/CSE360groupProject/src/application/application.css" text="LOG OUT">
+            <Button id="navButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: white;" stylesheets="@../../../../Downloads/CSE360-Group-main/CSE360groupProject/src/application/application.css" text="LOG OUT">
                <font>
                   <Font size="17.0" />
                </font>
@@ -118,7 +118,7 @@
                                           <Font size="17.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onAction="#updatePhoneNumber" style="-fx-background-color: #6aa84fff;" text="EDIT PHONE NUMBER">
+                                    <Button id="greenButton" mnemonicParsing="false" onAction="#updatePhoneNumber" style="-fx-background-color: #6aa84fff;" text="EDIT PHONE NUMBER">
                                        <font>
                                           <Font size="17.0" />
                                        </font>
@@ -158,12 +158,15 @@
                                     <TextArea prefHeight="481.0" prefWidth="531.0" />
                                  </children>
                               </VBox>
-                              <VBox prefHeight="414.0" prefWidth="356.0">
+                              <VBox prefHeight="481.0" prefWidth="240.0">
                                  <children>
-                                    <Button mnemonicParsing="false" text="Order Again">
+                                    <Button id="greenButton" mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="ORDER AGAIN">
                                        <font>
-                                          <Font size="17.0" />
-                                       </font></Button>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="35.0" top="200.0" />
+                                       </VBox.margin></Button>
                                  </children>
                               </VBox>
                            </children>
