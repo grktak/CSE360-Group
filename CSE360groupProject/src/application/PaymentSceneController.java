@@ -97,6 +97,13 @@ public class PaymentSceneController {
 		stage.show();
 	}
 	
+	public void setSavedCardInfo(ActionEvent event) throws IOException
+	{
+		cardNumField.setText(LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
+		cardCVCField.setText(LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
+		cardExpField.setText(LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
+	}
+	
 	public void populateCart()
 	{		
 		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().isEmpty() == false)

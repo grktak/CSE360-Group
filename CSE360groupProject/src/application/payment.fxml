@@ -138,7 +138,7 @@
                <VBox.margin>
                   <Insets left="15.0" top="10.0" />
                </VBox.margin></Text>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" text="Yes">
+            <Button mnemonicParsing="false" onAction="#setSavedCardInfo" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" text="Yes">
                <VBox.margin>
                   <Insets left="15.0" top="10.0" />
                </VBox.margin></Button>
