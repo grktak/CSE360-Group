@@ -105,7 +105,10 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="523.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="appetizerMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxAppetizer" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <Button layoutX="421.0" layoutY="367.0" mnemonicParsing="false" text="Add Item" />
+                        <Button layoutX="410.0" layoutY="403.0" mnemonicParsing="false" text="Remove Item" />
                      </children>
                   </AnchorPane>
             </content>
@@ -114,7 +117,10 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" text="Remove Item" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" text="Add Item" />
+                        <ComboBox fx:id="cBoxEntree" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -123,7 +129,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxSpacial" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" text="Add Item" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" text="Remove Item" />
                      </children>
                   </AnchorPane>
                </content>
@@ -132,7 +141,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="523.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" text="Remove Item" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" text="Add Item" />
+                        <ComboBox fx:id="cBoxDessert" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -141,7 +153,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="525.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxDrink" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" text="Add Item" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" text="Remove Item" />
                      </children>
                   </AnchorPane>
                </content>
