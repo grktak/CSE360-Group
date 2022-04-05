@@ -1,13 +1,17 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -24,6 +28,13 @@ public class MenuSceneController {
 	@FXML private TextArea spacialsMenuTextArea;
 	@FXML private TextArea desertMenuTextArea;
 	@FXML private TextArea drinkMenuTextArea;
+	
+	//combo boxes for ordering
+	@FXML private ComboBox<String> cBoxAppetizer;
+	@FXML private ComboBox<String> cBoxEntree;
+	@FXML private ComboBox<String> cBoxSpacial;
+	@FXML private ComboBox<String> cBoxDessert;
+	@FXML private ComboBox<String> cBoxDrink;
 	
 	public void logOut(ActionEvent event) throws IOException
 	{
@@ -71,6 +82,7 @@ public class MenuSceneController {
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		
 		populateMenu();
+		populateComboBoxes();
 	}
 	
 	public void populateMenu()
@@ -80,6 +92,54 @@ public class MenuSceneController {
 		spacialsMenuTextArea.setText(LoggedInAccountData.spacialsMenu.getFormattedMenu());
 		desertMenuTextArea.setText(LoggedInAccountData.desertMenu.getFormattedMenu());
 		drinkMenuTextArea.setText(LoggedInAccountData.drinksMenu.getFormattedMenu());
+	}
+	
+	public void populateComboBoxes()
+	{	
+		//Appetizer menu
+		ArrayList<String> appetizerMenuItemNames = new ArrayList<String>();
+		for(int i = 0; i < LoggedInAccountData.appetizerMenu.items.size(); i++)
+		{
+			appetizerMenuItemNames.add(LoggedInAccountData.appetizerMenu.items.get(i).getName());
+		}
+		ObservableList<String> observableList = FXCollections.observableList(appetizerMenuItemNames);
+		cBoxAppetizer.setItems(observableList);
+		
+		//Entree menu
+		ArrayList<String> entreeMenuItemNames = new ArrayList<String>();
+		for(int i = 0; i < LoggedInAccountData.entreeMenu.items.size(); i++)
+		{
+			entreeMenuItemNames.add(LoggedInAccountData.entreeMenu.items.get(i).getName());
+		}
+		ObservableList<String> observableList2 = FXCollections.observableList(entreeMenuItemNames);
+		cBoxEntree.setItems(observableList2);
+		
+		//Spacials menu
+		ArrayList<String> spacialMenuItemNames = new ArrayList<String>();
+		for(int i = 0; i < LoggedInAccountData.spacialsMenu.items.size(); i++)
+		{
+			spacialMenuItemNames.add(LoggedInAccountData.spacialsMenu.items.get(i).getName());
+		}
+		ObservableList<String> observableList3 = FXCollections.observableList(spacialMenuItemNames);
+		cBoxSpacial.setItems(observableList3);
+		
+		//Desserts menu
+		ArrayList<String> dessertMenuItemNames = new ArrayList<String>();
+		for(int i = 0; i < LoggedInAccountData.desertMenu.items.size(); i++)
+		{
+			dessertMenuItemNames.add(LoggedInAccountData.desertMenu.items.get(i).getName());
+		}
+		ObservableList<String> observableList4 = FXCollections.observableList(dessertMenuItemNames);
+		cBoxDessert.setItems(observableList4);
+		
+		//Drinks menu
+		ArrayList<String> drinkMenuItemNames = new ArrayList<String>();
+		for(int i = 0; i < LoggedInAccountData.drinksMenu.items.size(); i++)
+		{
+			drinkMenuItemNames.add(LoggedInAccountData.drinksMenu.items.get(i).getName());
+		}
+		ObservableList<String> observableList5 = FXCollections.observableList(drinkMenuItemNames);
+		cBoxDrink.setItems(observableList5);
 	}
 	
 }
