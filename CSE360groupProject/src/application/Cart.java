@@ -55,6 +55,11 @@ public class Cart {
 	public void setTotalCost(int totalCost) {
 		this.totalCost = totalCost;
 	}
+	
+	public ArrayList<FoodItem> getItemsInCart()
+	{
+		return foodItemsInCart;
+	}
 
 	public void addFoodItemToCart(FoodItem item)
 	{

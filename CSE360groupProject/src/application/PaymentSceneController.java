@@ -8,7 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+<<<<<<< Updated upstream
 import javafx.scene.control.TextArea;
+=======
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+>>>>>>> Stashed changes
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -22,7 +27,12 @@ public class PaymentSceneController {
 	 @FXML private Text cardNumberText;
 	 @FXML private Text cardExpirationText;
 	 @FXML private Text cvcText;
+<<<<<<< Updated upstream
 	 @FXML private TextArea cartTextArea;
+=======
+	 @FXML private Button submitPaymentBtn;
+	 @FXML private Label waitListLabel;
+>>>>>>> Stashed changes
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -49,6 +59,20 @@ public class PaymentSceneController {
 		 MenuSceneController controller = loader.getController();
 		 controller.initData();
 		 
+		 stage.setScene(scene);
+		 stage.show();  
+	}
+	
+	public void switchToConfirmation(ActionEvent event) throws IOException
+	{
+		 FXMLLoader loader = new FXMLLoader();
+		 loader.setLocation(getClass().getResource("confirmation.fxml"));
+		 root = loader.load();
+		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		 scene = new Scene(root);
+		 submitPayment();
+		 ConfirmationSceneController controller = loader.getController();
+		 controller.initData();
 		 stage.setScene(scene);
 		 stage.show();  
 	}
@@ -82,5 +106,13 @@ public class PaymentSceneController {
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
 		populateCart();
 	}
+	
+	private void submitPayment()
+	{
+		Customer.waitListNum += 1;
+		waitListLabel.setText("Wait List: " + Customer.waitListNum);
+		
+	}
+	
 	
 }
