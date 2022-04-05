@@ -114,7 +114,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea1" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -123,7 +123,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea2" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="457.0" prefWidth="522.0" AnchorPane.leftAnchor="10.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -132,7 +132,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea11" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="523.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="523.0" AnchorPane.leftAnchor="10.0" />
                      </children>
                   </AnchorPane>
                </content>
@@ -141,7 +141,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea12" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="525.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="525.0" AnchorPane.leftAnchor="10.0" />
                      </children>
                   </AnchorPane>
                </content>

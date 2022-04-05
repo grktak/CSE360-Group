@@ -105,21 +105,21 @@
                <VBox.margin>
                   <Insets left="15.0" top="10.0" />
                </VBox.margin></Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number: ">
+            <Text fx:id="cardNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number: ">
                <font>
                   <Font size="15.0" />
                </font>
                <VBox.margin>
                   <Insets left="15.0" top="10.0" />
                </VBox.margin></Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Expiration:">
+            <Text fx:id="cardExpirationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Expiration:">
                <font>
                   <Font size="15.0" />
                </font>
                <VBox.margin>
                   <Insets left="15.0" top="10.0" />
                </VBox.margin></Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CVC:">
+            <Text fx:id="cvcText" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC:">
                <font>
                   <Font size="15.0" />
                </font>
@@ -194,7 +194,7 @@
                <children>
                   <VBox prefHeight="100.0" prefWidth="220.0">
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #cc0000; -fx-opacity: .75;" text="BACK">
+                        <Button mnemonicParsing="false" onAction="#switchToMenu" style="-fx-background-color: #cc0000; -fx-opacity: .75;" text="BACK">
                            <VBox.margin>
                               <Insets left="15.0" top="10.0" />
                            </VBox.margin>

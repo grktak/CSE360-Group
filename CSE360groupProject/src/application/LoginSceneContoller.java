@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,6 +20,7 @@ private Parent root;
 //Labels on login scene
 @FXML private TextField usernameField;
 @FXML private TextField numberField;
+@FXML private Label errorLabel;
 
 private boolean isManagerLogin = false;
  
@@ -93,7 +95,9 @@ private boolean isManagerLogin = false;
 		 else
 		 {
 			 //invalid phone number
-			 System.out.println("Invalid phone number");
+			 errorLabel.setText("Invalid Password");
+			 usernameField.setText("");
+			 numberField.setText("");
 			 return false;
 		 }
 	 }

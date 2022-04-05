@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginSceneContoller">
+<BorderPane id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginSceneContoller">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -30,9 +31,16 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
+            <Label fx:id="errorLabel" style="-fx-background-color: white; -fx-opacity: .7;" textFill="#d00000">
+               <VBox.margin>
+                  <Insets left="350.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font></Label>
             <TextField fx:id="usernameField" alignment="CENTER" promptText="USERNAME">
                <VBox.margin>
-                  <Insets left="200.0" right="200.0" top="80.0" />
+                  <Insets left="200.0" right="200.0" top="10.0" />
                </VBox.margin>
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -72,6 +80,9 @@
                </opaqueInsets>
             </Button>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </center>
 </BorderPane>
