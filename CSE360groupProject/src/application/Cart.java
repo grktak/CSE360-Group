@@ -81,4 +81,13 @@ public class Cart {
 		numberOfItems = 0;
 		totalCost = 0;
 	}
+	
+	public void addCartItemsFromOrder(Order order)
+	{
+		foodItemsInCart.removeAll(foodItemsInCart);
+		for(int i = 0; i < order.getOrderItems().size(); i++)
+		{
+			addFoodItemToCart(order.getOrderItems().get(i));
+		}
+	}
 }
