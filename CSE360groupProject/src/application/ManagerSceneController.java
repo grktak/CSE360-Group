@@ -43,8 +43,6 @@ public class ManagerSceneController {
 	@FXML TextArea selectedLoyalCustomers;
 	@FXML ComboBox<String> cBoxLoyalCustomer;
 	
-	private ArrayList<String> potLoyalCustomersListGlobal = new ArrayList<String>();
-	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(getClass().getResource("home.fxml"));
@@ -138,6 +136,21 @@ public class ManagerSceneController {
 		itemNameField.setText("");
 	}
 	
+	public void initData()
+	{
+		//populate current order text area
+		int count = 0;
+		
+		for(int i = 0; i < LoggedInAccountData.cachedCustomers.size(); i++)
+		{
+			for(int j = 0; j < LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().size(); j++)
+			{
+				currentOrderTextArea.appendText("Order #: " + ++count + "\n\n");
+				currentOrderTextArea.appendText(LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().get(j).getFormattedOrderItems());
+			}
+		}
+	}
+	
 	public void searchForLoyalCustomers(ActionEvent event) {
 		ArrayList<String> potLoyalCustomersList = new ArrayList<String>();
 		for(int i = 0; i<LoggedInAccountData.cachedCustomers.size();i++) {
@@ -153,18 +166,11 @@ public class ManagerSceneController {
 	public void populateComboBox(ArrayList<String> potLoyalCustomersList) {
 		ObservableList<String> observableList5 = FXCollections.observableList(potLoyalCustomersList);
 		cBoxLoyalCustomer.setItems(observableList5);
-		potLoyalCustomersListGlobal = potLoyalCustomersList;
-		
 	}
 	
 	public void populatePotTextArea(ArrayList<String> potLoyalCustomersList) {
 		potentialLoyalCustomers.setText(formatPotLoyalCustomerList(potLoyalCustomersList));
-	}
-	
-	public void populateChosenTextArea(ArrayList<String> potLoyalCustomersList) {
-		
-	}
-	
+	}	
 	
 	public String formatPotLoyalCustomerList(ArrayList<String> potLoyalCustomersList) {
 		StringBuilder fieldContent = new StringBuilder("");
@@ -179,39 +185,12 @@ public class ManagerSceneController {
 		if(cBoxLoyalCustomer.getValue() != null) {
 			String selectedLoyalCust = cBoxLoyalCustomer.getValue();
 			selectedLoyalCustomers.appendText(selectedLoyalCust + "\n\n");
-			potLoyalCustomersListGlobal.add(selectedLoyalCust);
 		}
 		
 	}
 	
 	public void removeLoyalCustomer(ActionEvent event) {
 		
-		if(cBoxLoyalCustomer.getValue() != null) {
-			String selectedLoyalCust = cBoxLoyalCustomer.getValue();
-			//refreshCombo();
-			potLoyalCustomersListGlobal.remove(potLoyalCustomersListGlobal.indexOf(selectedLoyalCust));
-			for(int i=0;i<potLoyalCustomersListGlobal.size();i++) {
-				System.out.println("CustomerGlobalArray:" + potLoyalCustomersListGlobal.get(i));
-			}
-			
-			selectedLoyalCustomers.setText("");
-			for(int i=0;i<potLoyalCustomersListGlobal.size();i++) {
-				selectedLoyalCustomers.appendText(potLoyalCustomersListGlobal.get(i) + "\n\n");
-			}
-			
-		}
 	}
-//	public void refreshCombo() {
-//		ArrayList<String> potLoyalCustomersList = new ArrayList<String>();
-//		for(int i = 0; i<LoggedInAccountData.cachedCustomers.size();i++) {
-//			if(Integer.parseInt(searchOrderNum.getText()) == (LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().size())) {
-//				potLoyalCustomersList.add(LoggedInAccountData.cachedCustomers.get(i).getUserName());
-//			}
-//			
-//		}
-//		populateComboBox(potLoyalCustomersList);
-//	}
 	
-	
-
 }
