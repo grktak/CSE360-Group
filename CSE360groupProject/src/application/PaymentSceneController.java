@@ -120,6 +120,7 @@ public class PaymentSceneController {
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
+		waitListLabel.setText("Wait List: " + Customer.waitListNum);
 		populateCart();
 	}
 	
