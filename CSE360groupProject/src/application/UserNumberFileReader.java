@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -110,7 +111,9 @@ public class UserNumberFileReader {
 	            String newContent = oldContent.replaceAll(oldNum, newNum);
 	            //ReWriting to file w/ new phone number
 	            writer = new FileWriter(myObj);
-	            writer.write(newContent);
+	            BufferedWriter bw = new BufferedWriter(writer);
+	            bw.write(newContent);
+	            bw.close();
 	        }
 	        catch (IOException e)
 	        {
