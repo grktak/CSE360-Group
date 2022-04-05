@@ -241,7 +241,7 @@
                            <children>
                               <VBox layoutX="544.0" prefHeight="472.0" prefWidth="272.0">
                                  <children>
-                                    <TextArea fx:id="selectedLoyalCustomers" prefHeight="274.0" prefWidth="272.0" />
+                                    <TextArea fx:id="selectedLoyalCustomers" editable="false" prefHeight="274.0" prefWidth="272.0" />
                                     <VBox prefHeight="188.0" prefWidth="250.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Loyal Customers by Order Amount">
@@ -277,7 +277,7 @@
                                     </VBox>
                                  </children>
                               </VBox>
-                              <TextArea fx:id="potentialLoyalCustomers" layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="359.0" />
+                              <TextArea fx:id="potentialLoyalCustomers" editable="false" layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="359.0" />
                               <ComboBox fx:id="cBoxLoyalCustomer" layoutX="377.0" layoutY="24.0" prefHeight="25.0" prefWidth="151.0" promptText="Choose Customer..." />
                               <Button layoutX="376.0" layoutY="301.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="154.0" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Remove Customer">
                                  <font>
