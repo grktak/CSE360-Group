@@ -20,14 +20,14 @@
    <top>
       <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" stylesheets="@application.css" text="HOME" textFill="#cc0000">
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToHomeNonValidate" style="-fx-background-color: white;" stylesheets="@application.css" text="HOME" textFill="#cc0000">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
                <font>
                   <Font size="17.0" />
                </font></Button>
-            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" text="MENU">
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToMenu" style="-fx-background-color: white;" text="MENU">
                <HBox.margin>
                   <Insets top="20.0" />
                </HBox.margin>
@@ -42,7 +42,7 @@
                   <Insets left="420.0" top="26.0" />
                </HBox.margin>
             </Label>
-            <Button id="navButton" mnemonicParsing="false" style="-fx-background-color: white;" text="LOG OUT">
+            <Button id="navButton" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: white;" text="LOG OUT">
                <font>
                   <Font size="17.0" />
                </font>
@@ -133,7 +133,7 @@
                                                                </VBox.margin></Text>
                                                             <TextField prefHeight="27.0" prefWidth="202.0">
                                                                <VBox.margin>
-                                                                  <Insets />
+                                                                  <Insets top="1.0" />
                                                                </VBox.margin></TextField>
                                                          </children>
                                                          <padding>
@@ -155,16 +155,12 @@
                                                    </children>
                                                 </VBox>
                                                 <VBox layoutY="224.0" prefHeight="150.0" prefWidth="600.0">
-                                                   <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Description">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin></Text>
-                                                      <TextArea prefHeight="86.0" prefWidth="600.0" />
-                                                   </children>
                                                    <padding>
                                                       <Insets top="20.0" />
                                                    </padding>
+                                                   <children>
+                                                      <Button id="greenButton" mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="ADD BUTTON" />
+                                                   </children>
                                                 </VBox>
                                              </children>
                                              <opaqueInsets>
@@ -190,7 +186,7 @@
                                                       </VBox>
                                                       <VBox prefHeight="91.0" prefWidth="200.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" text="Delete Item">
+                                                            <Button mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="Delete Item">
                                                                <VBox.margin>
                                                                   <Insets left="20.0" top="15.0" />
                                                                </VBox.margin></Button>
