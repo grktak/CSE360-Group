@@ -32,6 +32,7 @@ public class MenuSceneController {
 	@FXML private TextArea drinkMenuTextArea;
 	@FXML private TextArea cartTextArea;
 	@FXML private Label waitTimeLabel;
+	@FXML private Label totalCostLabel;
 	
 	//combo boxes for ordering
 	@FXML private ComboBox<String> cBoxAppetizer;
@@ -42,7 +43,6 @@ public class MenuSceneController {
 	
 	//Add and remove buttons for ordering
 	@FXML private Button addButtonAppetizer;
-	
 	
 	public void logOut(ActionEvent event) throws IOException
 	{
@@ -89,6 +89,7 @@ public class MenuSceneController {
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
+		totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		
 		populateMenu();
 		populateCart();
@@ -174,6 +175,8 @@ public class MenuSceneController {
 		
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -191,6 +194,8 @@ public class MenuSceneController {
 			
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -207,6 +212,8 @@ public class MenuSceneController {
 		
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -223,6 +230,8 @@ public class MenuSceneController {
 		
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -239,6 +248,8 @@ public class MenuSceneController {
 		
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -260,6 +271,8 @@ public class MenuSceneController {
 			//Update the cart area display
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -281,6 +294,8 @@ public class MenuSceneController {
 			//Update the cart area display
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -302,6 +317,8 @@ public class MenuSceneController {
 			//Update the cart area display
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -323,6 +340,8 @@ public class MenuSceneController {
 			//Update the cart area display
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
@@ -344,6 +363,8 @@ public class MenuSceneController {
 			//Update the cart area display
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+			
+			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 	}
 	
