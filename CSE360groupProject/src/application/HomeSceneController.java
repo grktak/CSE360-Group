@@ -91,6 +91,8 @@ public class HomeSceneController {
         //Edit text file
         UserNumberFileReader.updatePhoneNumberInFile(newNumber,oldNumber);
         
+        numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
+        
         System.out.println("User Number was updated successfully");
         
     }
