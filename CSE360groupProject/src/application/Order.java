@@ -50,4 +50,14 @@ public class Order {
 		return time;
 	}
 	
+	public Order getOrderByNumber(int num)
+	{
+		if(orderNumber == num)
+		{
+			return this;
+		}
+		
+		return null;
+	}
+	
 }

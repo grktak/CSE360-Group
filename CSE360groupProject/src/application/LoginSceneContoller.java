@@ -55,6 +55,9 @@ private boolean isManagerLogin = false;
 			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			 scene = new Scene(root);
 			 
+			 ManagerSceneController controller = loader.getController();
+			 controller.initData();
+			 
 			 stage.setScene(scene);
 			 stage.show(); 
 		 }else

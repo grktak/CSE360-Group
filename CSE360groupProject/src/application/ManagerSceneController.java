@@ -24,6 +24,7 @@ public class ManagerSceneController {
 	private Parent root;
 	
 	@FXML TextField deleteItemField;
+	@FXML TextArea currentOrderTextArea;
 	
 	//Add item fields
 	@FXML TextField itemNameField;

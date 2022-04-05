@@ -28,6 +28,7 @@ public class PaymentSceneController {
 	 @FXML private TextArea cartTextArea;
 	 @FXML private Button submitPaymentBtn;
 	 @FXML private Label waitListLabel;
+	 @FXML private Label totalCostLabel;
 	 
 	 //credit card payment text fields
 	 @FXML private TextField cardNumField;
@@ -115,6 +116,7 @@ public class PaymentSceneController {
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());

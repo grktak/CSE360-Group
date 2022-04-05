@@ -74,7 +74,7 @@
                <VBox.margin>
                   <Insets left="10.0" top="10.0" />
                </VBox.margin></Text>
-            <Label text="Total: $" textFill="WHITE">
+            <Label fx:id="totalCostLabel" text="Total: $" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

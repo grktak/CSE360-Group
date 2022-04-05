@@ -1,13 +1,17 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -26,6 +30,9 @@ public class HomeSceneController {
 	@FXML private TextField newNumberField;
 	@FXML private TextArea orderHistoryTextArea;
 	@FXML private Label waitTimeLabel;
+	
+	//Combo box for order again
+	@FXML ComboBox<Integer> selectOrderComboBox;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -91,11 +98,50 @@ public class HomeSceneController {
         //Edit text file
         UserNumberFileReader.updatePhoneNumberInFile(newNumber,oldNumber);
         
+        numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
+        
         System.out.println("User Number was updated successfully");
         
     }
 	
-	public void populateOrderHistory()
+	public void orderAgain(ActionEvent event) throws IOException
+	{
+		if(selectOrderComboBox.getValue() != null)
+		{
+			int selectedItem = selectOrderComboBox.getValue();
+			
+			Order selectedOrder = null;
+			//Find corresponding order
+			for(int i = 0; i < LoggedInAccountData.loggedInCustomer.getOrderHistory().size(); i++)
+			{
+				if(LoggedInAccountData.loggedInCustomer.getOrderHistory().get(i).getOrderByNumber(selectedItem) != null)
+				{
+					selectedOrder = LoggedInAccountData.loggedInCustomer.getOrderHistory().get(i).getOrderByNumber(selectedItem);
+				}
+			}
+			
+			//Clear cart and update with order
+			if(selectedOrder != null)
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().addCartItemsFromOrder(selectedOrder);
+			}
+			
+			//Bring to payment scene
+			 FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("payment.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 PaymentSceneController controller = loader.getController();
+			 controller.initData();
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		}
+	}
+	
+	private void populateOrderHistory()
 	{		
 		orderHistoryTextArea.setText(LoggedInAccountData.loggedInCustomer.getFormattedOrderHistory());
 	}
@@ -108,6 +154,20 @@ public class HomeSceneController {
 		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
 		
 		populateOrderHistory();
+		populateOrderAgainComboBox();
+	}
+	
+	private void populateOrderAgainComboBox()
+	{
+		ArrayList<Integer> numsToAddToBox = new ArrayList<Integer>();
+		
+		for(int i = 0;i < LoggedInAccountData.loggedInCustomer.getOrderHistory().size(); i++)
+		{
+			numsToAddToBox.add(LoggedInAccountData.loggedInCustomer.getOrderHistory().get(i).getOrderNumber());
+		}
+		
+		ObservableList<Integer> observableList = FXCollections.observableList(numsToAddToBox);
+		selectOrderComboBox.setItems(observableList);
 	}
 	
 }
