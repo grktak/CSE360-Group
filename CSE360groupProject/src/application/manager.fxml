@@ -241,7 +241,7 @@
                            <children>
                               <VBox layoutX="544.0" prefHeight="472.0" prefWidth="272.0">
                                  <children>
-                                    <TextArea prefHeight="274.0" prefWidth="272.0" />
+                                    <TextArea fx:id="selectedLoyalCustomers" prefHeight="274.0" prefWidth="272.0" />
                                     <VBox prefHeight="188.0" prefWidth="250.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Loyal Customers by Order Amount">
@@ -254,7 +254,7 @@
                                                 <Insets left="10.0" right="10.0" />
                                              </VBox.margin>
                                           </TextField>
-                                          <Button mnemonicParsing="false" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Search">
+                                          <Button mnemonicParsing="false" onAction="#searchForLoyalCustomers" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Search">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </VBox.margin>
@@ -277,8 +277,8 @@
                                     </VBox>
                                  </children>
                               </VBox>
-                              <TextArea layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="359.0" />
-                              <ComboBox layoutX="377.0" layoutY="24.0" prefHeight="25.0" prefWidth="151.0" promptText="Choose Customer..." />
+                              <TextArea fx:id="potentialLoyalCustomers" layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="359.0" />
+                              <ComboBox fx:id="cBoxLoyalCustomer" layoutX="377.0" layoutY="24.0" prefHeight="25.0" prefWidth="151.0" promptText="Choose Customer..." />
                               <Button layoutX="376.0" layoutY="301.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="154.0" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Remove Customer">
                                  <font>
                                     <Font size="15.0" />
