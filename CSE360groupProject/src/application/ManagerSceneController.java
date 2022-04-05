@@ -24,6 +24,7 @@ public class ManagerSceneController {
 	private Parent root;
 	
 	@FXML TextField deleteItemField;
+	@FXML TextArea currentOrderTextArea;
 	
 	//Add item fields
 	@FXML TextField itemNameField;
@@ -168,5 +169,18 @@ public class ManagerSceneController {
 		return fieldContent.toString();
 	}
 	
-	
+	public void initData()
+	{
+		//populate current order text area
+		int count = 0;
+		
+		for(int i = 0; i < LoggedInAccountData.cachedCustomers.size(); i++)
+		{
+			for(int j = 0; j < LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().size(); j++)
+			{
+				currentOrderTextArea.appendText("Order #: " + ++count + "\n\n");
+				currentOrderTextArea.appendText(LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().get(j).getFormattedOrderItems());
+			}
+		}
+	}
 }
