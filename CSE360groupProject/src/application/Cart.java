@@ -30,6 +30,16 @@ public class Cart {
 		return false;
 	}
 	
+	public boolean itemExistsInCart(FoodItem item)
+	{
+		if(foodItemsInCart.contains(item))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public int getNumberOfItems() {
 		return numberOfItems;
 	}
@@ -51,5 +61,12 @@ public class Cart {
 		foodItemsInCart.add(item);
 		numberOfItems++;
 		totalCost += item.getPrice();
+	}
+	
+	public void removeItemFromCart(FoodItem item)
+	{
+		foodItemsInCart.remove(item);
+		numberOfItems--;
+		totalCost -= item.getPrice();
 	}
 }
