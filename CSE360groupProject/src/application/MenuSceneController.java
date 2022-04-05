@@ -72,17 +72,24 @@ public class MenuSceneController {
 	}
 	
 	public void switchToPayment(ActionEvent event) throws IOException { 
-		 FXMLLoader loader = new FXMLLoader();
-		 loader.setLocation(getClass().getResource("payment.fxml"));
-		 root = loader.load();
-		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		 scene = new Scene(root);
+		 if(!LoggedInAccountData.loggedInCustomer.getCustomerCart().isEmpty())
+		 {
+			FXMLLoader loader = new FXMLLoader();
+		 	loader.setLocation(getClass().getResource("payment.fxml"));
+		 	root = loader.load();
+		 	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		 	scene = new Scene(root);
 		 
-		 PaymentSceneController controller = loader.getController();
-		 controller.initData();
+		 	PaymentSceneController controller = loader.getController();
+		 	controller.initData();
 		 
-		 stage.setScene(scene);
-		 stage.show(); 
+		 	stage.setScene(scene);
+		 	stage.show(); 
+		 }
+		 else
+		 {
+			 System.out.println("Cart is empty");
+		 }
 	}
 	
 	public void initData()
