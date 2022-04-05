@@ -18,7 +18,7 @@ public class Customer extends User{
 	public Customer(String user, String number)
 	{
 		super(user, number);
-		this.creditInfo = new CreditCard("1234567891011121314", "X/X", "XXX"); 
+		this.creditInfo = new CreditCard("NOT ON FILE", "NOT ON FILE", "NOT ON FILE"); 
 	}
 	
 	public CreditCard getCreditInfo() {

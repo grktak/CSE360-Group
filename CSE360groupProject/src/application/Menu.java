@@ -11,6 +11,19 @@ public class Menu {
 	public int numOfDesserts;
 	public int numOfDrinks;
 	
+	public FoodItem getItemByName(String name)
+	{
+		for(int i = 0; i < items.size(); i++)
+		{
+			if(items.get(i).getName().equalsIgnoreCase(name))
+			{
+				return items.get(i);
+			}
+		}
+		
+		return null;
+	}
+	
 	public void addItem(FoodItem item)
 	{
 		items.add(item);

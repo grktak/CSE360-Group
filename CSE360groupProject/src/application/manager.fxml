@@ -104,12 +104,12 @@
                                                       <VBox prefHeight="163.0" prefWidth="242.0">
                                                          <children>
                                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name" />
-                                                            <TextField />
+                                                            <TextField fx:id="deleteItemField" />
                                                          </children>
                                                       </VBox>
                                                       <VBox prefHeight="91.0" prefWidth="200.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" text="Delete Item" />
+                                                            <Button mnemonicParsing="false" onAction="#deleteMenuItem" text="Delete Item" />
                                                          </children>
                                                       </VBox>
                                                    </children>
