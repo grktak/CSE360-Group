@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
@@ -27,6 +28,11 @@ public class PaymentSceneController {
 	 @FXML private TextArea cartTextArea;
 	 @FXML private Button submitPaymentBtn;
 	 @FXML private Label waitListLabel;
+	 
+	 //credit card payment text fields
+	 @FXML private TextField cardNumField;
+	 @FXML private TextField cardExpField;
+	 @FXML private TextField cardCVCField;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -59,16 +65,23 @@ public class PaymentSceneController {
 	
 	public void switchToConfirmation(ActionEvent event) throws IOException
 	{
-		 FXMLLoader loader = new FXMLLoader();
-		 loader.setLocation(getClass().getResource("confirmation.fxml"));
-		 root = loader.load();
-		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		 scene = new Scene(root);
-		 submitPayment();
-		 ConfirmationSceneController controller = loader.getController();
-		 controller.initData();
-		 stage.setScene(scene);
-		 stage.show();  
+		if(isCardValid())
+		{
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("confirmation.fxml"));
+			root = loader.load();
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			submitPayment();
+			ConfirmationSceneController controller = loader.getController();
+			controller.initData();
+			stage.setScene(scene);
+			stage.show();  
+		}
+		else
+		{
+			System.out.println("Card Info cannot be blank.");
+		}
 	}
 	
 	public void logOut(ActionEvent event) throws IOException
@@ -106,6 +119,7 @@ public class PaymentSceneController {
 		Customer.waitListNum += 1;
 		waitListLabel.setText("Wait List: " + Customer.waitListNum);
 		createOrder();
+		setNewCardInfo();
 	}
 	
 	private void createOrder()
@@ -120,5 +134,21 @@ public class PaymentSceneController {
 		LoggedInAccountData.loggedInCustomer.getCustomerCart().emptyCart();
 	}
 	
+	private void setNewCardInfo()
+	{
+		LoggedInAccountData.loggedInCustomer.getCreditInfo().setCardNumber(cardNumField.getText());
+		LoggedInAccountData.loggedInCustomer.getCreditInfo().setCardCVC(cardCVCField.getText());
+		LoggedInAccountData.loggedInCustomer.getCreditInfo().setCardExpiration(cardExpField.getText());
+	}
+	
+	private boolean isCardValid()
+	{
+		if(cardNumField.getText().isEmpty() || cardExpField.getText().isEmpty() || cardCVCField.getText().isEmpty())
+		{
+			return false;
+		}
+		
+		return true;
+	}
 	
 }
