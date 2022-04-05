@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Customer extends User{
 
 	private CreditCard creditInfo;
+	private Cart customerCart;
 	private boolean hasCoupon;
 	private ArrayList<FoodItem> favoriteOrders = new ArrayList<FoodItem>();
 	private ArrayList<Order> orderHistory = new ArrayList<Order>();
@@ -12,12 +13,14 @@ public class Customer extends User{
 	public Customer(CreditCard creditInfo, String user, String number)
 	{
 		super(user, number);
+		this.customerCart = new Cart();
 		this.creditInfo = creditInfo; 
 	}
 	
 	public Customer(String user, String number)
 	{
 		super(user, number);
+		this.customerCart = new Cart();
 		this.creditInfo = new CreditCard("NOT ON FILE", "NOT ON FILE", "NOT ON FILE"); 
 	}
 	
@@ -56,6 +59,10 @@ public class Customer extends User{
 		}
 		
 		return fieldContent.toString();
+	}
+
+	public Cart getCustomerCart() {
+		return customerCart;
 	}
 	
 }

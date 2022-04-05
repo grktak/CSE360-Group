@@ -1,13 +1,35 @@
 package application;
 
+import java.util.ArrayList;
+
 public class Cart {
 	
-	private int numberOfItems;
+	private int numberOfItems = 0;
 	
 	private int totalCost;
 	
-	private FoodItem[] foodItemsInCart;
+	private ArrayList<FoodItem> foodItemsInCart = new ArrayList<FoodItem>();
 
+	public String getFormattedFoodItemsInCart()
+	{
+		StringBuilder fieldContent = new StringBuilder("");
+		for(int i = 0; i < foodItemsInCart.size(); i++)
+		{
+			fieldContent.append(foodItemsInCart.get(i).getFormattedFoodItem());
+		}
+		return fieldContent.toString();
+	}
+	
+	public boolean isEmpty()
+	{
+		if(foodItemsInCart.size() <= 0)
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public int getNumberOfItems() {
 		return numberOfItems;
 	}
@@ -24,12 +46,10 @@ public class Cart {
 		this.totalCost = totalCost;
 	}
 
-	public FoodItem[] getFoodItemsInCart() {
-		return foodItemsInCart;
+	public void addFoodItemToCart(FoodItem item)
+	{
+		foodItemsInCart.add(item);
+		numberOfItems++;
+		totalCost += item.getPrice();
 	}
-
-	public void setFoodItemsInCart(FoodItem[] foodItemsInCart) {
-		this.foodItemsInCart = foodItemsInCart;
-	}
-	
 }

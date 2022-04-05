@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
@@ -28,6 +29,7 @@ public class MenuSceneController {
 	@FXML private TextArea spacialsMenuTextArea;
 	@FXML private TextArea desertMenuTextArea;
 	@FXML private TextArea drinkMenuTextArea;
+	@FXML private TextArea cartTextArea;
 	
 	//combo boxes for ordering
 	@FXML private ComboBox<String> cBoxAppetizer;
@@ -35,6 +37,10 @@ public class MenuSceneController {
 	@FXML private ComboBox<String> cBoxSpacial;
 	@FXML private ComboBox<String> cBoxDessert;
 	@FXML private ComboBox<String> cBoxDrink;
+	
+	//Add and remove buttons for ordering
+	@FXML private Button addButtonAppetizer;
+	
 	
 	public void logOut(ActionEvent event) throws IOException
 	{
@@ -82,6 +88,7 @@ public class MenuSceneController {
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		
 		populateMenu();
+		populateCart();
 		populateComboBoxes();
 	}
 	
@@ -92,6 +99,14 @@ public class MenuSceneController {
 		spacialsMenuTextArea.setText(LoggedInAccountData.spacialsMenu.getFormattedMenu());
 		desertMenuTextArea.setText(LoggedInAccountData.desertMenu.getFormattedMenu());
 		drinkMenuTextArea.setText(LoggedInAccountData.drinksMenu.getFormattedMenu());
+	}
+	
+	public void populateCart()
+	{		
+		if(LoggedInAccountData.loggedInCustomer.getCustomerCart().isEmpty() == false)
+		{
+			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
+		}
 	}
 	
 	public void populateComboBoxes()
@@ -140,6 +155,71 @@ public class MenuSceneController {
 		}
 		ObservableList<String> observableList5 = FXCollections.observableList(drinkMenuItemNames);
 		cBoxDrink.setItems(observableList5);
+	}
+	
+	public void addItemToCartAppetizer() throws IOException
+	{
+		//Get the item that we are adding
+		String selectedItemName = cBoxAppetizer.getValue();
+		FoodItem itemToAdd = LoggedInAccountData.appetizerMenu.getItemByName(selectedItemName);
+		
+		//update the logged in users cart by adding the item
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+		
+		//display the added item in the cart area
+		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+	}
+	
+	public void addItemToCartEntree() throws IOException
+	{
+		//Get the item that we are adding
+		String selectedItemName = cBoxEntree.getValue();
+		FoodItem itemToAdd = LoggedInAccountData.entreeMenu.getItemByName(selectedItemName);
+		
+		//update the logged in users cart by adding the item
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+		
+		//display the added item in the cart area
+		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+	}
+	
+	public void addItemToCartSpacial() throws IOException
+	{
+		//Get the item that we are adding
+		String selectedItemName = cBoxSpacial.getValue();
+		FoodItem itemToAdd = LoggedInAccountData.spacialsMenu.getItemByName(selectedItemName);
+		
+		//update the logged in users cart by adding the item
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+		
+		//display the added item in the cart area
+		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+	}
+	
+	public void addItemToCartDessert() throws IOException
+	{
+		//Get the item that we are adding
+		String selectedItemName = cBoxDessert.getValue();
+		FoodItem itemToAdd = LoggedInAccountData.desertMenu.getItemByName(selectedItemName);
+		
+		//update the logged in users cart by adding the item
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+		
+		//display the added item in the cart area
+		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
+	}
+	
+	public void addItemToCartDrink() throws IOException
+	{
+		//Get the item that we are adding
+		String selectedItemName = cBoxDrink.getValue();
+		FoodItem itemToAdd = LoggedInAccountData.drinksMenu.getItemByName(selectedItemName);
+		
+		//update the logged in users cart by adding the item
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().addFoodItemToCart(itemToAdd);
+		
+		//display the added item in the cart area
+		cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 	}
 	
 }
