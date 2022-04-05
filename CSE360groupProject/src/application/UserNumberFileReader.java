@@ -38,7 +38,7 @@ public class UserNumberFileReader {
 					
 					String[] parts = data.split(" ");
 						
-					userToPhoneNumbers.put(parts[0], parts[1]);
+					userToPhoneNumbers.put(parts[0], parts[1]); //causes array index out of bounds error when more then 4 error
 						
 					System.out.println(parts[0] + " : " +  parts[1]);
 				}

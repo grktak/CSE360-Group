@@ -1,5 +1,33 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-.root{
+#homePage{
     -fx-background-image:url('pizza.png');
     -fx-background-size:cover;
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url('Oswald-Regular.tff');
+}
+
+
+.tab-header-background
+{
+    -fx-background-color: #cc0000;
+    -fx-opacity:.75;
+}
+#contactTab
+{
+-fx-padding: 10;
+}
+.tab:hover{
+-fx-background-color: green;
+}
+#contactTabPane{
+
+}
+#navButton:hover{
+    -fx-underline: true;
+    -fx-text-fill: #cc0000c1;
+}
+#greenButton:hover{
+    -fx-text-fill: white;
 }

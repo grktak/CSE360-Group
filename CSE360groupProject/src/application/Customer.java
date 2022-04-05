@@ -51,6 +51,9 @@ public class Customer extends User{
 	
 	public String getFormattedOrderHistory()
 	{
+		if(this.orderHistory.isEmpty()) {
+			return " ";
+		}
 		StringBuilder fieldContent = new StringBuilder("");
 		for(int i = 0; i < orderHistory.size(); i++)
 		{
@@ -59,6 +62,8 @@ public class Customer extends User{
 			fieldContent.append("\n\n");
 		}
 		
+		System.out.println("ERROR HERE");
+		fieldContent.toString();
 		return fieldContent.toString();
 	}
 	
