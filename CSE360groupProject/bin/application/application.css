@@ -3,3 +3,7 @@
     -fx-background-image:url('pizza.png');
     -fx-background-size:cover;
 }
+.tab-header-background
+{
+    -fx-background-color: red;
+}
