@@ -151,8 +151,8 @@ public class ManagerSceneController {
 		}
 	}
 	
+	ArrayList<String> potLoyalCustomersList = new ArrayList<String>();
 	public void searchForLoyalCustomers(ActionEvent event) {
-		ArrayList<String> potLoyalCustomersList = new ArrayList<String>();
 		for(int i = 0; i<LoggedInAccountData.cachedCustomers.size();i++) {
 			if(Integer.parseInt(searchOrderNum.getText()) == (LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().size())) {
 				potLoyalCustomersList.add(LoggedInAccountData.cachedCustomers.get(i).getUserName());
@@ -172,6 +172,10 @@ public class ManagerSceneController {
 		potentialLoyalCustomers.setText(formatPotLoyalCustomerList(potLoyalCustomersList));
 	}	
 	
+	public void populatePotTextAreaSelected(ArrayList<String> potLoyalCustomersList) {
+		selectedLoyalCustomers.setText(formatPotLoyalCustomerList(potLoyalCustomersList));
+	}
+	
 	public String formatPotLoyalCustomerList(ArrayList<String> potLoyalCustomersList) {
 		StringBuilder fieldContent = new StringBuilder("");
 		for(int i = 0; i < potLoyalCustomersList.size(); i++) {
@@ -180,17 +184,52 @@ public class ManagerSceneController {
 		return fieldContent.toString();
 	}
 	
+	ArrayList<String> addedLoyalCustomersList = new ArrayList<String>();
 	public void addLoyalCustomer(ActionEvent event) {
 		
 		if(cBoxLoyalCustomer.getValue() != null) {
 			String selectedLoyalCust = cBoxLoyalCustomer.getValue();
+			addedLoyalCustomersList.add(selectedLoyalCust);
 			selectedLoyalCustomers.appendText(selectedLoyalCust + "\n\n");
 		}
 		
 	}
 	
 	public void removeLoyalCustomer(ActionEvent event) {
-		
+		if(cBoxLoyalCustomer.getValue() != null) {
+			String selectedLoyalCust = cBoxLoyalCustomer.getValue();
+			addedLoyalCustomersList.remove(selectedLoyalCust);
+			selectedLoyalCustomers.setText("");
+			populatePotTextAreaSelected(addedLoyalCustomersList);
+		}
+	}
+	
+	public void addCoupon(ActionEvent event) throws IOException
+	{
+		if(!addedLoyalCustomersList.isEmpty())
+		{
+			//Get all customers selected
+			ArrayList<Customer> customersToGiveCouponsTo = new ArrayList<Customer>();
+			for(int i = 0; i < addedLoyalCustomersList.size(); i++)
+			{
+				if(LoggedInAccountData.cachedCustomers.get(i).getCustomerByName(addedLoyalCustomersList.get(i)) != null)
+				{
+					customersToGiveCouponsTo.add(LoggedInAccountData.cachedCustomers.get(i));
+					System.out.println("Added " + customersToGiveCouponsTo.get(i).getUserName() + " to the list.");
+				}
+			}
+			
+			for(int i = 0; i < customersToGiveCouponsTo.size(); i++)
+			{
+				customersToGiveCouponsTo.get(i).setHasCoupon(true);
+			}
+			
+			selectedLoyalCustomers.setText("");
+		}
+		else
+		{
+			System.out.println("You must select a customer.");
+		}
 	}
 	
 }

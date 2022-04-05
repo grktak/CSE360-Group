@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -16,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerSceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManagerSceneController">
    <top>
       <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -257,7 +262,7 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </Button>
-                                          <Button id="greenButton" mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="Give out coupon">
+                                          <Button id="greenButton" mnemonicParsing="false" onAction="#addCoupon" style="-fx-background-color: #6aa84fff;" text="Give out coupon">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="30.0" />
                                              </VBox.margin>
@@ -274,7 +279,7 @@
                               </VBox>
                               <TextArea fx:id="potentialLoyalCustomers" editable="false" layoutX="4.0" layoutY="4.0" prefHeight="470.0" prefWidth="359.0" />
                               <ComboBox fx:id="cBoxLoyalCustomer" layoutX="377.0" layoutY="24.0" prefHeight="25.0" prefWidth="151.0" promptText="Choose Customer..." />
-                              <Button layoutX="376.0" layoutY="301.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="154.0" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Remove Customer">
+                              <Button layoutX="376.0" layoutY="301.0" mnemonicParsing="false" onAction="#removeLoyalCustomer" prefHeight="9.0" prefWidth="154.0" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Remove Customer">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Button>

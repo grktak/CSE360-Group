@@ -71,4 +71,14 @@ public class Customer extends User{
 		return waitListNum;
 	}
 	
+	public Customer getCustomerByName(String name)
+	{
+		if(this.getUserName().equals(name))
+		{
+			return this;
+		}
+		
+		return null;
+	}
+	
 }
