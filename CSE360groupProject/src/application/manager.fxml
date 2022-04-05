@@ -244,12 +244,12 @@
                                                 <Insets left="10.0" top="10.0" />
                                              </VBox.margin>
                                           </Text>
-                                          <TextField promptText="Order Amount">
+                                          <TextField fx:id="searchOrderNum" promptText="Order Amount">
                                              <VBox.margin>
                                                 <Insets left="10.0" right="10.0" />
                                              </VBox.margin>
                                           </TextField>
-                                          <Button mnemonicParsing="false" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Search">
+                                          <Button mnemonicParsing="false" onAction="#populateComboBox" style="-fx-background-color: #cc0000; -fx-opacity: .75; -fx-text-fill: black;" text="Search">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </VBox.margin>
@@ -257,7 +257,7 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </Button>
-                                          <Button id="greenButton" mnemonicParsing="false" style="-fx-background-color: #6aa84fff;" text="Give out coupon">
+                                          <Button id="greenButton" mnemonicParsing="false" onAction="#searchForLoyalCustomers" style="-fx-background-color: #6aa84fff;" text="Give out coupon">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="30.0" />
                                              </VBox.margin>

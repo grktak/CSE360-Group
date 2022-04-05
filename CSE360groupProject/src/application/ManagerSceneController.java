@@ -1,7 +1,10 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -31,6 +35,12 @@ public class ManagerSceneController {
 	@FXML CheckBox spacialsBox;
 	@FXML CheckBox dessertBox;
 	@FXML CheckBox drinksBox;
+	
+	//Assigning Coupons
+	@FXML TextField searchOrderNum;
+	@FXML TextArea potentialLoyalCustomers;
+	@FXML TextArea selectedLoyalCustomers;
+	@FXML private ComboBox<String> cBoxLoyalCustomer;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -124,5 +134,39 @@ public class ManagerSceneController {
 		ingredientsField.setText("");
 		itemNameField.setText("");
 	}
+	
+	public void searchForLoyalCustomers(ActionEvent event) {
+		ArrayList<String> potLoyalCustomersList = new ArrayList<String>();
+		for(int i = 0; i<LoggedInAccountData.cachedCustomers.size();i++) {
+			if(Integer.parseInt(searchOrderNum.getText()) == (LoggedInAccountData.cachedCustomers.get(i).getOrderHistory().size())) {
+				potLoyalCustomersList.add(LoggedInAccountData.cachedCustomers.get(i).getUserName());
+			}
+		}
+		populateComboBox(potLoyalCustomersList);
+		populatePotTextArea(potLoyalCustomersList);
+	}
+	
+	public void populateComboBox(ArrayList<String> potLoyalCustomersList) {
+		ObservableList<String> observableList5 = FXCollections.observableList(potLoyalCustomersList);
+		cBoxLoyalCustomer.setItems(observableList5);
+	}
+	
+	public void populatePotTextArea(ArrayList<String> potLoyalCustomersList) {
+		potentialLoyalCustomers.setText(formatPotLoyalCustomerList(potLoyalCustomersList));
+	}
+	
+	public void populateChosenTextArea(ArrayList<String> potLoyalCustomersList) {
+		
+	}
+	
+	
+	public String formatPotLoyalCustomerList(ArrayList<String> potLoyalCustomersList) {
+		StringBuilder fieldContent = new StringBuilder("");
+		for(int i = 0; i < potLoyalCustomersList.size(); i++) {
+			fieldContent.append(potLoyalCustomersList.get(i) + "\n");
+		}
+		return fieldContent.toString();
+	}
+	
 	
 }
