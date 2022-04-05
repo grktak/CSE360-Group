@@ -18,6 +18,9 @@ public class PaymentSceneController {
 	 private Parent root;
 	 
 	 @FXML private Text userLabelMenu;
+	 @FXML private Text cardNumberText;
+	 @FXML private Text cardExpirationText;
+	 @FXML private Text cvcText;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -64,6 +67,9 @@ public class PaymentSceneController {
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
+		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
+		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
 	}
 	
 }

@@ -1,7 +1,6 @@
 package application;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -36,11 +35,14 @@ public class UserNumberFileReader {
 				{
 					String data = myReader.nextLine();
 					
-					String[] parts = data.split(" ");
+					if(!data.equals(""))
+					{
+						String[] parts = data.split(" ");
 						
-					userToPhoneNumbers.put(parts[0], parts[1]); //causes array index out of bounds error when more then 4 error
-						
-					System.out.println(parts[0] + " : " +  parts[1]);
+						userToPhoneNumbers.put(parts[0], parts[1]); //causes array index out of bounds error when more then 4 error
+							
+						System.out.println(parts[0] + " : " +  parts[1]);
+					}
 				}
 			}
 		} catch (FileNotFoundException e) {

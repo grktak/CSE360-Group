@@ -42,9 +42,9 @@
       <VBox prefHeight="327.0" prefWidth="439.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saved Card Information" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number: " />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Card Expiration:" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CVC:" />
+            <Text fx:id="cardNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number: " />
+            <Text fx:id="cardExpirationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Expiration:" />
+            <Text fx:id="cvcText" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC:" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Used Saved Card? " />
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Yes" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT CARD PAYMENT" />
