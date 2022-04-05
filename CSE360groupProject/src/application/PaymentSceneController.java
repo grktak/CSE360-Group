@@ -105,7 +105,19 @@ public class PaymentSceneController {
 	{
 		Customer.waitListNum += 1;
 		waitListLabel.setText("Wait List: " + Customer.waitListNum);
-		
+		createOrder();
+	}
+	
+	private void createOrder()
+	{
+		//Take items from cart and create a new order
+		Order orderToAdd = new Order();
+		for(int i = 0; i < LoggedInAccountData.loggedInCustomer.getCustomerCart().getItemsInCart().size(); i++)
+		{
+			orderToAdd.getOrderItems().add(LoggedInAccountData.loggedInCustomer.getCustomerCart().getItemsInCart().get(i));
+		}
+		LoggedInAccountData.loggedInCustomer.getOrderHistory().add(orderToAdd);
+		LoggedInAccountData.loggedInCustomer.getCustomerCart().emptyCart();
 	}
 	
 	

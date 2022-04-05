@@ -74,4 +74,11 @@ public class Cart {
 		numberOfItems--;
 		totalCost -= item.getPrice();
 	}
+	
+	public void emptyCart()
+	{
+		foodItemsInCart.removeAll(foodItemsInCart);
+		numberOfItems = 0;
+		totalCost = 0;
+	}
 }
