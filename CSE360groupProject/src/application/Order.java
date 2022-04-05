@@ -6,7 +6,7 @@ public class Order {
 
 	private int orderNumber = -1;
 	private ArrayList<FoodItem> orderItems = new ArrayList<FoodItem>();
-
+	
 	public ArrayList<FoodItem> getOrderItems() {
 		return orderItems;
 	}
@@ -35,6 +35,19 @@ public class Order {
 
 	public void setOrderNumber(int orderNumber) {
 		this.orderNumber = orderNumber;
+	}
+	
+	public int CalculateOrderTotalWaitTime()
+	{
+		int time = 0;
+		
+		for(int i = 0; i < orderItems.size(); i++)
+		{
+			System.out.println("Item wait time: " + orderItems.get(i).getTimeToMake() + "\n");
+			time += orderItems.get(i).getTimeToMake();
+		}
+		
+		return time;
 	}
 	
 }

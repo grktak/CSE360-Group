@@ -65,7 +65,7 @@ public class ConfirmationSceneController {
 	{
 			waitListLabel.setText("Wait List: " + Customer.waitListNum);
 			userLabelConf.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
-			estimatedWaitTime.setText("Time: " + LoggedInAccountData.loggedInCustomer.getWaitTime());
+			estimatedWaitTime.setText("Time: " + LoggedInAccountData.getTotalWaitTime());
 	}
 		
 }

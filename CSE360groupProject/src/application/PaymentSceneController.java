@@ -70,9 +70,9 @@ public class PaymentSceneController {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("confirmation.fxml"));
 			root = loader.load();
+			submitPayment();
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
-			submitPayment();
 			ConfirmationSceneController controller = loader.getController();
 			controller.initData();
 			stage.setScene(scene);
@@ -123,8 +123,6 @@ public class PaymentSceneController {
 	
 	private void submitPayment()
 	{
-		Customer.waitListNum += 1;
-		waitListLabel.setText("Wait List: " + Customer.waitListNum);
 		createOrder();
 		setNewCardInfo();
 	}

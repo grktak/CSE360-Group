@@ -10,7 +10,6 @@ public class Customer extends User{
 	private ArrayList<FoodItem> favoriteOrders = new ArrayList<FoodItem>();
 	private ArrayList<Order> orderHistory = new ArrayList<Order>();
 	public static int waitListNum = 0;
-	private int waitTime = 0;
 
 	public Customer(CreditCard creditInfo, String user, String number)
 	{
@@ -70,13 +69,6 @@ public class Customer extends User{
 	public int getwaitListNum()
 	{
 		return waitListNum;
-	}
-	public int getWaitTime()
-	{
-		for(int i = 0; i < customerCart.getItemsInCart().size(); i++) {
-			waitTime += customerCart.getItemsInCart().get(i).getTimeToMake();
-		}
-		return waitTime;
 	}
 	
 }

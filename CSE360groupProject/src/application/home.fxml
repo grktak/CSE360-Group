@@ -39,7 +39,7 @@
                   <Insets top="20.0" />
                </HBox.margin>
             </Button>
-            <Label prefHeight="22.0" prefWidth="183.0" text="WAIT TIME: X:XX">
+            <Label fx:id="waitTimeLabel" prefHeight="22.0" prefWidth="183.0" text="WAIT TIME: X:XX">
                <font>
                   <Font size="17.0" />
                </font>

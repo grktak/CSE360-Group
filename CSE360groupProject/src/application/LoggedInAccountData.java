@@ -57,4 +57,24 @@ public class LoggedInAccountData {
 		drinksMenu.addItem(new FoodItem(3, "Sprite", ingredients7, 1));
 		//- - - - -
 	}
+	
+	public static int getTotalWaitTime()
+	{
+		int waitTime = 0;
+		
+		for(int i = 0; i < cachedCustomers.size(); i++)
+		{
+			for(int j = 0; j < cachedCustomers.get(i).getOrderHistory().size(); j++)
+			{
+				waitTime += cachedCustomers.get(i).getOrderHistory().get(j).CalculateOrderTotalWaitTime();
+			}
+		}
+		
+		for(int i = 0; i < loggedInCustomer.getOrderHistory().size(); i++)
+		{
+			waitTime += loggedInCustomer.getOrderHistory().get(i).CalculateOrderTotalWaitTime();
+		}
+		
+		return waitTime;
+	}
 }

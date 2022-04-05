@@ -25,6 +25,7 @@ public class HomeSceneController {
 	@FXML private Label userHomeMain;
 	@FXML private TextField newNumberField;
 	@FXML private TextArea orderHistoryTextArea;
+	@FXML private Label waitTimeLabel;
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -104,6 +105,7 @@ public class HomeSceneController {
 		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
 		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
 		
 		populateOrderHistory();
 	}

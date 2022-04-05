@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -30,6 +31,7 @@ public class MenuSceneController {
 	@FXML private TextArea desertMenuTextArea;
 	@FXML private TextArea drinkMenuTextArea;
 	@FXML private TextArea cartTextArea;
+	@FXML private Label waitTimeLabel;
 	
 	//combo boxes for ordering
 	@FXML private ComboBox<String> cBoxAppetizer;
@@ -86,6 +88,7 @@ public class MenuSceneController {
 	public void initData()
 	{
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
+		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
 		
 		populateMenu();
 		populateCart();
