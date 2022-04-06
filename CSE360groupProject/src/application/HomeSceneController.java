@@ -105,16 +105,22 @@ public class HomeSceneController {
 	
 	public void updatePhoneNumber() throws IOException
     {
-		String oldNumber = LoggedInAccountData.loggedInCustomer.getPhoneNumber();
-		String newNumber = newNumberField.getText();
-        LoggedInAccountData.loggedInCustomer.setPhoneNumber(newNumberField.getText());
-        //Edit text file
-        UserNumberFileReader.updatePhoneNumberInFile(newNumber,oldNumber);
+		if(!LoggedInAccountData.loggedInCustomer.getUserName().equalsIgnoreCase("guest"))
+		{
+			String oldNumber = LoggedInAccountData.loggedInCustomer.getPhoneNumber();
+			String newNumber = newNumberField.getText();
+			LoggedInAccountData.loggedInCustomer.setPhoneNumber(newNumberField.getText());
+			//Edit text file
+			UserNumberFileReader.updatePhoneNumberInFile(newNumber,oldNumber);
         
-        numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
+			numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
         
-        System.out.println("User Number was updated successfully");
-        
+			System.out.println("User Number was updated successfully");
+		}
+		else
+		{
+			System.out.println("Cannot change number as guest");
+		}
     }
 	
 	public void orderAgain(ActionEvent event) throws IOException
