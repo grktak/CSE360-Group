@@ -210,12 +210,15 @@ public class ManagerSceneController {
 		{
 			//Get all customers selected
 			ArrayList<Customer> customersToGiveCouponsTo = new ArrayList<Customer>();
-			for(int i = 0; i < addedLoyalCustomersList.size(); i++)
+			for(int i = 0; i < LoggedInAccountData.cachedCustomers.size(); i++)
 			{
-				if(LoggedInAccountData.cachedCustomers.get(i).getCustomerByName(addedLoyalCustomersList.get(i)) != null)
+				for(int j = 0; j < addedLoyalCustomersList.size(); j++)
 				{
-					customersToGiveCouponsTo.add(LoggedInAccountData.cachedCustomers.get(i));
-					System.out.println("Added " + customersToGiveCouponsTo.get(i).getUserName() + " to the list.");
+					if(LoggedInAccountData.cachedCustomers.get(i).getCustomerByName(addedLoyalCustomersList.get(j)) != null)
+					{
+						customersToGiveCouponsTo.add(LoggedInAccountData.cachedCustomers.get(i));
+						System.out.println("Added " + customersToGiveCouponsTo.get(i).getUserName() + " to the list of coupons.");
+					}
 				}
 			}
 			
