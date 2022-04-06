@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -43,6 +44,8 @@ public class MenuSceneController {
 	
 	//Add and remove buttons for ordering
 	@FXML private Button addButtonAppetizer;
+	
+	private DecimalFormat df = new DecimalFormat("0.00");
 	
 	public void logOut(ActionEvent event) throws IOException
 	{
@@ -94,9 +97,14 @@ public class MenuSceneController {
 	
 	public void initData()
 	{
+		if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+		{
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+		}
+		
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
-		totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+		totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		
 		populateMenu();
 		populateCart();
@@ -183,7 +191,12 @@ public class MenuSceneController {
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -202,7 +215,12 @@ public class MenuSceneController {
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -220,7 +238,12 @@ public class MenuSceneController {
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -238,7 +261,12 @@ public class MenuSceneController {
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -256,7 +284,12 @@ public class MenuSceneController {
 			//display the added item in the cart area
 			cartTextArea.appendText(itemToAdd.getFormattedFoodItem());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -279,7 +312,12 @@ public class MenuSceneController {
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -302,7 +340,12 @@ public class MenuSceneController {
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -325,7 +368,12 @@ public class MenuSceneController {
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -348,7 +396,12 @@ public class MenuSceneController {
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	
@@ -371,7 +424,12 @@ public class MenuSceneController {
 			cartTextArea.setText("");
 			cartTextArea.setText(LoggedInAccountData.loggedInCustomer.getCustomerCart().getFormattedFoodItemsInCart());
 			
-			totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+			{
+				LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+			}
+			
+			totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		}
 	}
 	

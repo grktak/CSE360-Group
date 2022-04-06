@@ -6,7 +6,7 @@ public class Cart {
 	
 	private int numberOfItems = 0;
 	
-	private int totalCost;
+	private float totalCost;
 	
 	private ArrayList<FoodItem> foodItemsInCart = new ArrayList<FoodItem>();
 
@@ -48,12 +48,12 @@ public class Cart {
 		this.numberOfItems = numberOfItems;
 	}
 
-	public int getTotalCost() {
+	public float getTotalCost() {
 		return totalCost;
 	}
 
-	public void setTotalCost(int totalCost) {
-		this.totalCost = totalCost;
+	public void setTotalCost(float f) {
+		this.totalCost = (f - (f * .2f));
 	}
 	
 	public ArrayList<FoodItem> getItemsInCart()

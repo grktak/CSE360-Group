@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,8 @@ public class PaymentSceneController {
 	 @FXML private TextField cardNumField;
 	 @FXML private TextField cardExpField;
 	 @FXML private TextField cardCVCField;
+	 
+	 private DecimalFormat df = new DecimalFormat("0.00");
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
 		 FXMLLoader loader = new FXMLLoader();
@@ -115,8 +118,13 @@ public class PaymentSceneController {
 	
 	public void initData()
 	{
+		if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+		{
+			LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+		}
+		
 		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
-		totalCostLabel.setText("Total: $" + LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
+		totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
