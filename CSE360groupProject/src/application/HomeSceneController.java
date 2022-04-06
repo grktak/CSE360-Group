@@ -149,9 +149,8 @@ public class HomeSceneController {
 	public void initData()
 	{
 		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
-		userLabelHome.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
-		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
+		waitTimeLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
 		
 		populateOrderHistory();
 		populateOrderAgainComboBox();

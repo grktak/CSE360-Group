@@ -77,4 +77,26 @@ public class LoggedInAccountData {
 		
 		return waitTime;
 	}
+	
+	public static int getLineNumber()
+	{
+		int lineNumber = 0;
+		
+		for(int i = 0; i < cachedCustomers.size(); i++)
+		{
+			for(int j = 0; j < cachedCustomers.get(i).getOrderHistory().size(); j++)
+			{
+				lineNumber++;
+			}
+		}
+		
+		for(int i = 0; i < loggedInCustomer.getOrderHistory().size(); i++)
+		{
+			lineNumber++;
+		}
+		
+		return lineNumber;
+	}
+	
+	
 }
