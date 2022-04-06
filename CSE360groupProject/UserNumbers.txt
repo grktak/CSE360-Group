@@ -1,3 +1,2 @@
-dimi 1
-d 1
-d 2
+guest 123
+Garik 480

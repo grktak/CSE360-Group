@@ -141,7 +141,7 @@ public class PaymentSceneController {
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
-		waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
+		waitListLabel.setText("Queue: " + LoggedInAccountData.waitTime + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
 		if(LoggedInAccountData.loggedInCustomer.hasCoupon())
 		{
 			userDiscountLabel.setText("A 20% coupon has been applied to your account! Enjoy :D");
@@ -152,6 +152,7 @@ public class PaymentSceneController {
 	private void submitPayment()
 	{
 		LoggedInAccountData.orderTotal++ ;
+		LoggedInAccountData.waitTime += LoggedInAccountData.loggedInCustomer.getCustomerCart().totalCartTime();
 		createOrder();
 		setNewCardInfo();
 	}
@@ -177,7 +178,7 @@ public class PaymentSceneController {
 	
 	private boolean isCardValid()
 	{
-		if(cardNumField.getText().isEmpty() || cardExpField.getText().isEmpty() || cardCVCField.getText().isEmpty())
+		if(cardNumField.getText().isEmpty() || cardExpField.getText().isEmpty() || cardCVCField.getText().isEmpty() || cardNumField.getText().equals("NOT ON FILE"))
 		{
 			return false;
 		}

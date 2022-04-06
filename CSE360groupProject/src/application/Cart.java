@@ -91,4 +91,12 @@ public class Cart {
 		}
 	}
 	
+	public int totalCartTime() {
+		int totalTime = 0;
+		for(int i=0; i<foodItemsInCart.size();i++) {
+			totalTime+=foodItemsInCart.get(i).getTimeToMake();
+		}
+		return totalTime;
+	}
+	
 }

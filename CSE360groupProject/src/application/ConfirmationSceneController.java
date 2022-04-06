@@ -76,12 +76,12 @@ public class ConfirmationSceneController {
 	}
 	public void initData()
 	{
-			waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
-			int ordersAhead = LoggedInAccountData.orderTotal;
+			waitListLabel.setText("Queue: " + LoggedInAccountData.waitTime + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
+			int ordersAhead = LoggedInAccountData.orderTotal - 1;
 			if(ordersAhead == 1) {
-				estimatedWaitTime.setText("Time: " + LoggedInAccountData.getTotalWaitTime() + "   There is " + ordersAhead + " order ahead of you");
+				estimatedWaitTime.setText("Time: " + LoggedInAccountData.waitTime + "   There is " + ordersAhead + " order ahead of you");
 			}
-			estimatedWaitTime.setText("Time: " + LoggedInAccountData.getTotalWaitTime() + "   There are " + ordersAhead + " orders ahead of you");
+			estimatedWaitTime.setText("Time: " + LoggedInAccountData.waitTime + "   There are " + ordersAhead + " orders ahead of you");
 	}
 		
 }

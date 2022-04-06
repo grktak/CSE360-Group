@@ -217,7 +217,7 @@ public class ManagerSceneController {
 					if(LoggedInAccountData.cachedCustomers.get(i).getCustomerByName(addedLoyalCustomersList.get(j)) != null)
 					{
 						customersToGiveCouponsTo.add(LoggedInAccountData.cachedCustomers.get(i));
-						System.out.println("Added " + customersToGiveCouponsTo.get(i).getUserName() + " to the list of coupons.");
+						//System.out.println("Added " + customersToGiveCouponsTo.get(i).getUserName() + " to the list of coupons.");
 					}
 				}
 			}
