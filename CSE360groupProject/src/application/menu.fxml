@@ -7,6 +7,8 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -93,10 +95,24 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="appetizerMenuTextArea" editable="false" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="appetizerMenuTextArea" editable="false" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" />
                         <ComboBox fx:id="cBoxAppetizer" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                         <Button fx:id="addButtonAppetizer" layoutX="421.0" layoutY="367.0" mnemonicParsing="false" onAction="#addItemToCartAppetizer" text="Add Item" />
                         <Button layoutX="410.0" layoutY="403.0" mnemonicParsing="false" onAction="#removeItemFromCartAppetizer" text="Remove Item" />
+                        <VBox layoutX="234.0" layoutY="16.0" prefHeight="452.0" prefWidth="108.0">
+                           <children>
+                              <ImageView fitHeight="103.0" fitWidth="107.0">
+                                 <image>
+                                    <Image url="@fries.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="110.0" fitWidth="125.0">
+                                 <image>
+                                    <Image url="@garlicBread.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -105,10 +121,24 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="204.0" AnchorPane.leftAnchor="10.0" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartEntree" text="Remove Item" />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartEntree" text="Add Item" />
                         <ComboBox fx:id="cBoxEntree" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <VBox layoutX="221.0" layoutY="18.0" prefHeight="446.0" prefWidth="131.0">
+                           <children>
+                              <ImageView fitHeight="112.0" fitWidth="135.0">
+                                 <image>
+                                    <Image url="@smallPizza.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="127.0" fitWidth="140.0">
+                                 <image>
+                                    <Image url="@chum.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -117,10 +147,19 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="192.0" AnchorPane.leftAnchor="10.0" />
                         <ComboBox fx:id="cBoxSpacial" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartSpacial" text="Add Item" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartSpacial" text="Remove Item" />
+                        <VBox layoutX="209.0" layoutY="11.0" prefHeight="459.0" prefWidth="140.0">
+                           <children>
+                              <ImageView fitHeight="126.0" fitWidth="137.0">
+                                 <image>
+                                    <Image url="@salad.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>
@@ -129,10 +168,19 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="180.0" AnchorPane.leftAnchor="10.0" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDessert" text="Remove Item" />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDessert" text="Add Item" />
                         <ComboBox fx:id="cBoxDessert" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <VBox layoutX="195.0" layoutY="10.0" prefHeight="461.0" prefWidth="163.0">
+                           <children>
+                              <ImageView fitHeight="137.0" fitWidth="149.0">
+                                 <image>
+                                    <Image url="@cake.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>
@@ -141,10 +189,19 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="357.0" AnchorPane.leftAnchor="10.0" />
+                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="184.0" AnchorPane.leftAnchor="10.0" />
                         <ComboBox fx:id="cBoxDrink" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
                         <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDrink" text="Add Item" />
                         <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDrink" text="Remove Item" />
+                        <VBox layoutX="202.0" layoutY="12.0" prefHeight="456.0" prefWidth="153.0">
+                           <children>
+                              <ImageView fitHeight="124.0" fitWidth="143.0">
+                                 <image>
+                                    <Image url="@sprite.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>

@@ -76,8 +76,8 @@ public class ConfirmationSceneController {
 	}
 	public void initData()
 	{
-			waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
-			int ordersAhead = LoggedInAccountData.getLineNumber()-1;
+			waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
+			int ordersAhead = LoggedInAccountData.orderTotal;
 			if(ordersAhead == 1) {
 				estimatedWaitTime.setText("Time: " + LoggedInAccountData.getTotalWaitTime() + "   There is " + ordersAhead + " order ahead of you");
 			}

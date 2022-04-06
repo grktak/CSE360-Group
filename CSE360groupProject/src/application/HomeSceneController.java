@@ -99,7 +99,6 @@ public class HomeSceneController {
 		
 		LoggedInAccountData.cachedCustomers.add(LoggedInAccountData.loggedInCustomer);
 		LoggedInAccountData.loggedInCustomer = null;
-		
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -164,7 +163,7 @@ public class HomeSceneController {
 	{
 		numberLabelHome.setText(LoggedInAccountData.loggedInCustomer.getFormattedNumber());
 		userHomeMain.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
-		waitTimeLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
+		waitTimeLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.orderTotal);
 		
 		populateOrderHistory();
 		populateOrderAgainComboBox();

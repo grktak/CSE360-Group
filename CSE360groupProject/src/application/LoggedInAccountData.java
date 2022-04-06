@@ -14,6 +14,8 @@ public class LoggedInAccountData {
 	public static Menu desertMenu;
 	public static Menu drinksMenu;
 	
+	public static int orderTotal = 0;
+	
 	public static void initalizeMenu()
 	{
 		
@@ -78,25 +80,37 @@ public class LoggedInAccountData {
 		return waitTime;
 	}
 	
-	public static int getLineNumber()
-	{
-		int lineNumber = 0;
-		
-		for(int i = 0; i < cachedCustomers.size(); i++)
-		{
-			for(int j = 0; j < cachedCustomers.get(i).getOrderHistory().size(); j++)
-			{
-				lineNumber++;
-			}
-		}
-		
-		for(int i = 0; i < loggedInCustomer.getOrderHistory().size(); i++)
-		{
-			lineNumber++;
-		}
-		
-		return lineNumber;
-	}
-	
+//	private static int lineNumber = 0;
+//	
+//	public static int getLineNumber()
+//	{
+//		
+//		boolean newUser = true;
+//		
+//		for(int i = 0; i < cachedCustomers.size(); i++)
+//		{
+//			if(loggedInCustomer.getUserName().equals(cachedCustomers.get(i).getUserName())) {
+//				newUser = false;
+//			}
+//			for(int j = 0; j < cachedCustomers.get(i).getOrderHistory().size(); j++)
+//			{
+//				if(newUser) {
+//					lineNumber++;
+//				}
+//				
+//			}
+//		}
+//		
+//		
+//		for(int i = 0; i < loggedInCustomer.getOrderHistory().size(); i++)
+//		{
+//				lineNumber++;
+//		}
+//		
+//		
+//		return lineNumber;
+//
+//	}
+
 	
 }
