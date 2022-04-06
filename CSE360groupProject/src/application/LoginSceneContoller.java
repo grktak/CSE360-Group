@@ -81,6 +81,11 @@ private boolean isManagerLogin = false;
 		 return true;
 	 }
 	 
+	 if(usernameField.getText().isEmpty() || numberField.getText().isEmpty()) {
+		 errorLabel.setText("Please enter a username and phone number");
+		 return false;
+	 }
+	 
 	 if(UserNumberFileReader.userToPhoneNumbers.containsKey(usernameField.getText()))
 	 {
 		 if(UserNumberFileReader.userToPhoneNumbers.get(usernameField.getText()).equals(numberField.getText()))
@@ -91,7 +96,7 @@ private boolean isManagerLogin = false;
 		 else
 		 {
 			 //invalid phone number
-			 errorLabel.setText("Invalid Password");
+			 errorLabel.setText("Invalid phone number");
 			 usernameField.setText("");
 			 numberField.setText("");
 			 return false;

@@ -34,6 +34,7 @@ public class PaymentSceneController {
 	 @FXML private TextField cardNumField;
 	 @FXML private TextField cardExpField;
 	 @FXML private TextField cardCVCField;
+	 @FXML private Label userDiscountLabel;
 	 
 	 private DecimalFormat df = new DecimalFormat("0.00");
 	
@@ -141,6 +142,10 @@ public class PaymentSceneController {
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
 		waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
+		if(LoggedInAccountData.loggedInCustomer.hasCoupon())
+		{
+			userDiscountLabel.setText("A 20% coupon has been applied to your account! Enjoy :D");
+		}
 		populateCart();
 	}
 	
