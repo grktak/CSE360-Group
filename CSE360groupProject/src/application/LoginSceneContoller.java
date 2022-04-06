@@ -33,14 +33,7 @@ private boolean isManagerLogin = false;
 }
  
  
- public void switchToGuestHome(ActionEvent event) throws IOException {
-	 root = FXMLLoader.load(getClass().getResource("guestHome.fxml"));
-	 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	 scene = new Scene(root);
-	 stage.setScene(scene);
-	 stage.show();
- }
- 
+
  public void switchToHomeValidate(ActionEvent event) throws IOException {
 	 if(validateLogin())
 	 {

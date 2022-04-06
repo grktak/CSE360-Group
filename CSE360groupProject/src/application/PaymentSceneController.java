@@ -38,6 +38,19 @@ public class PaymentSceneController {
 	 private DecimalFormat df = new DecimalFormat("0.00");
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
+		if(LoggedInAccountData.loggedInCustomer.getUserName().equals("manager")) {
+			FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("manager.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 ManagerSceneController controller = loader.getController();
+			 controller.initData();
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		}else {
 		 FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(getClass().getResource("home.fxml"));
 		 root = loader.load();
@@ -49,6 +62,7 @@ public class PaymentSceneController {
 		 
 		 stage.setScene(scene);
 		 stage.show(); 
+		}
 	}
 	
 	public void switchToMenu(ActionEvent event) throws IOException
@@ -126,7 +140,7 @@ public class PaymentSceneController {
 		cardNumberText.setText("Card Number: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardNumber());
 		cardExpirationText.setText("Card Expiration: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardExpiration());
 		cvcText.setText("CVC: " + LoggedInAccountData.loggedInCustomer.getCreditInfo().getCardCVC());
-		waitListLabel.setText("Wait List: " + Customer.waitListNum);
+		waitListLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
 		populateCart();
 	}
 	

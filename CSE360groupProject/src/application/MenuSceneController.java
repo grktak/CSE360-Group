@@ -60,17 +60,32 @@ public class MenuSceneController {
 	}
 	
 	public void switchToHomeNonValidate(ActionEvent event) throws IOException { 
-		 FXMLLoader loader = new FXMLLoader();
-		 loader.setLocation(getClass().getResource("home.fxml"));
-		 root = loader.load();
-		 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		 scene = new Scene(root);
+		if(LoggedInAccountData.loggedInCustomer.getUserName().equals("manager")) {
+			FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("manager.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 ManagerSceneController controller = loader.getController();
+			 controller.initData();
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		}else {
+			FXMLLoader loader = new FXMLLoader();
+			 loader.setLocation(getClass().getResource("home.fxml"));
+			 root = loader.load();
+			 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			 scene = new Scene(root);
+			 
+			 HomeSceneController controller = loader.getController();
+			 controller.initData();
+			 
+			 stage.setScene(scene);
+			 stage.show(); 
+		}
 		 
-		 HomeSceneController controller = loader.getController();
-		 controller.initData();
-		 
-		 stage.setScene(scene);
-		 stage.show(); 
 	}
 	
 	public void switchToPayment(ActionEvent event) throws IOException { 
@@ -101,7 +116,7 @@ public class MenuSceneController {
 			LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 		
-		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
+		waitTimeLabel.setText("Queue: " + LoggedInAccountData.getTotalWaitTime() + " min" + "     # Orders: " + LoggedInAccountData.getLineNumber());
 		totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		
 		populateMenu();
