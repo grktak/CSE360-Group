@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConfirmationSceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConfirmationSceneController">
    <top>
       <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button id="navButton" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="34.0" prefWidth="72.0" style="-fx-background-color: white;" text="MENU">
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: white;" text="MENU">
                <font>
                   <Font size="17.0" />
                </font>
@@ -29,24 +29,13 @@
                   <Insets top="20.0" />
                </HBox.margin>
             </Button>
-            <Label fx:id="waitListLabel" prefHeight="22.0" prefWidth="183.0" text="WAIT LIST: X:XX">
+            <Label fx:id="waitListLabel" prefHeight="22.0" prefWidth="478.0" text="WAIT LIST: X:XX">
                <font>
                   <Font size="17.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" top="25.0" />
                </HBox.margin>
-            </Label>
-            <Label fx:id="userLabelConf" prefHeight="22.0" prefWidth="123.0" text="Hello, User">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="200.0" top="27.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
             </Label>
             <Button id="navButton" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: white;" stylesheets="@application.css" text="LOG OUT">
                <font>
@@ -79,7 +68,7 @@
             </Text>
             <Label fx:id="estimatedWaitTime">
                <VBox.margin>
-                  <Insets left="275.0" />
+                  <Insets left="400.0" />
                </VBox.margin>
                <font>
                   <Font size="15.0" />
