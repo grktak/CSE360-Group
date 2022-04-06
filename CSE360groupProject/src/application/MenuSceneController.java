@@ -24,8 +24,7 @@ public class MenuSceneController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	
-	@FXML private Text userLabelMenu;
+
 	@FXML private TextArea appetizerMenuTextArea;
 	@FXML private TextArea entreeMenuTextArea;
 	@FXML private TextArea spacialsMenuTextArea;
@@ -102,7 +101,6 @@ public class MenuSceneController {
 			LoggedInAccountData.loggedInCustomer.getCustomerCart().setTotalCost(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost());
 		}
 		
-		userLabelMenu.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 		waitTimeLabel.setText("WAIT TIME: " + LoggedInAccountData.getTotalWaitTime() + " min");
 		totalCostLabel.setText("Total: $" + df.format(LoggedInAccountData.loggedInCustomer.getCustomerCart().getTotalCost()));
 		

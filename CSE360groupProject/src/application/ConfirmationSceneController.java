@@ -17,7 +17,6 @@ public class ConfirmationSceneController {
 	private Parent root;
 	
 	@FXML private Label waitListLabel;
-	@FXML private Label userLabelConf;
 	@FXML private Label estimatedWaitTime;
 	
 	public void logOut(ActionEvent event) throws IOException
@@ -64,7 +63,6 @@ public class ConfirmationSceneController {
 	public void initData()
 	{
 			waitListLabel.setText("Wait List: " + Customer.waitListNum);
-			userLabelConf.setText("Hello, " + LoggedInAccountData.loggedInCustomer.getUserName());
 			int ordersAhead = LoggedInAccountData.getLineNumber()-1;
 			if(ordersAhead == 1) {
 				estimatedWaitTime.setText("Time: " + LoggedInAccountData.getTotalWaitTime() + "   There is " + ordersAhead + " order ahead of you");
