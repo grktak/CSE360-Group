@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeSceneController">
+   <top>
+      <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToHomeNonValidate" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: white;" text="HOME" textFill="#cc0000cf">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: white;" text="MENU">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="waitTimeLabel" prefHeight="22.0" prefWidth="478.0" text="WAIT TIME: X:XX">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="25.0" />
+               </HBox.margin>
+            </Label>
+            <Button id="navButton" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: white;" stylesheets="@application.css" text="LOG OUT">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="40.0" right="20.0" top="20.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane id="contactTabPane" fx:id="contactTabPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="479.0" prefWidth="794.0" side="LEFT" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="contactTab" style="-fx-background-color: white;" text="Contact Information">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="1.0" prefHeight="479.0" prefWidth="827.0">
+                           <children>
+                              <Label fx:id="userHomeMain" text="Username">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Phone Number:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" top="10.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="numberLabelHome" text="XXX-XXX-XXXX">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newNumberField" promptText="New Number? Type Here">
+                                       <HBox.margin>
+                                          <Insets left="70.0" right="20.0" top="15.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button id="greenButton" mnemonicParsing="false" onAction="#updatePhoneNumber" style="-fx-background-color: #6aa84fff;" text="EDIT PHONE NUMBER">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="15.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Label text="*" textFill="#f30101">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <Label text="*If you would like to chage your number please enter in the text box above without formatting (no hyphens or spaces required)" textFill="#cc0000" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets left="50.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </content>
+          </Tab>
+            <Tab id="contactTab" style="-fx-background-color: white;" text="Order History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="1.0" layoutY="-1.0" prefHeight="481.0" prefWidth="860.0">
+                           <children>
+                              <VBox prefHeight="491.0" prefWidth="558.0">
+                                 <children>
+                                    <TextArea fx:id="orderHistoryTextArea" editable="false" prefHeight="481.0" prefWidth="531.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="481.0" prefWidth="240.0">
+                                 <children>
+                                    <ComboBox fx:id="selectOrderComboBox" prefWidth="150.0" promptText="Select Order Number...">
+                                       <VBox.margin>
+                                          <Insets left="55.0" top="20.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <Button id="greenButton" mnemonicParsing="false" onAction="#orderAgain" style="-fx-background-color: #6aa84fff;" text="ORDER AGAIN">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="35.0" top="200.0" />
+                                       </VBox.margin></Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets left="50.0" />
+         </opaqueInsets>
+      </TabPane>
+   </center>
+   <left>
+      <VBox prefHeight="479.0" prefWidth="11.0" style="-fx-background-color: #cc0000c1;" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

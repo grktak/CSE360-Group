@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginSceneContoller">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@Logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="340.0" top="20.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="errorLabel" style="-fx-background-color: white; -fx-opacity: .7;" textFill="#d00000">
+               <VBox.margin>
+                  <Insets left="240.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font></Label>
+            <TextField fx:id="usernameField" alignment="CENTER" promptText="USERNAME">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.6298811435699463" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="numberField" alignment="CENTER" prefHeight="7.0" prefWidth="860.0" promptText="PHONE NUMBER">
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.6349745392799377" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToHomeValidate" style="-fx-background-color: #6aa84fff;" text="Login">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="390.0" top="20.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets right="20.0" />
+               </opaqueInsets>
+            </Button>
+            <Label style="-fx-background-color: white;" text="     For Guest Access, Username = guest, Password = 123   " textFill="RED">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="200.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

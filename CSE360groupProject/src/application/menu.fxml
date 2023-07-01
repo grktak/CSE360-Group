@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="860.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuSceneController">
+   <top>
+      <HBox prefHeight="63.0" prefWidth="860.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToHomeNonValidate" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: white;" text="HOME" textFill="#000000cf">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button id="navButton" mnemonicParsing="false" onAction="#switchToHomeNonValidate" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: white;" text="MENU" textFill="#cc0000cf">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="waitTimeLabel" prefHeight="22.0" prefWidth="478.0" text="WAIT TIME: X:XX">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="25.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="101.0" style="-fx-background-color: white;" text="LOG OUT">
+               <HBox.margin>
+                  <Insets left="40.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox prefHeight="479.0" prefWidth="260.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin></Text>
+            <Label fx:id="totalCostLabel" text="Total: $" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin></Label>
+            <AnchorPane prefHeight="353.0" prefWidth="255.0">
+               <children>
+                  <TextArea fx:id="cartTextArea" editable="false" layoutX="9.0" prefHeight="346.0" prefWidth="233.0" />
+               </children>
+            </AnchorPane>
+            <Button id="greenButton" mnemonicParsing="false" onAction="#switchToPayment" style="-fx-background-color: #6aa84fff; -fx-opacity: 1;" text="Check Out">
+               <VBox.margin>
+                  <Insets left="130.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <TabPane prefHeight="494.0" prefWidth="618.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="contactTab" style="-fx-background-color: white;" text="Appetizers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextArea fx:id="appetizerMenuTextArea" editable="false" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxAppetizer" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <Button fx:id="addButtonAppetizer" layoutX="421.0" layoutY="367.0" mnemonicParsing="false" onAction="#addItemToCartAppetizer" text="Add Item" />
+                        <Button layoutX="410.0" layoutY="403.0" mnemonicParsing="false" onAction="#removeItemFromCartAppetizer" text="Remove Item" />
+                        <VBox layoutX="234.0" layoutY="16.0" prefHeight="452.0" prefWidth="108.0">
+                           <children>
+                              <ImageView fitHeight="103.0" fitWidth="107.0">
+                                 <image>
+                                    <Image url="@fries.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="110.0" fitWidth="125.0">
+                                 <image>
+                                    <Image url="@garlicBread.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab id="contactTab" fx:id="entreeCart" style="-fx-background-color: white;" text="Entrees">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextArea fx:id="entreeMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="204.0" AnchorPane.leftAnchor="10.0" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartEntree" text="Remove Item" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartEntree" text="Add Item" />
+                        <ComboBox fx:id="cBoxEntree" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <VBox layoutX="221.0" layoutY="18.0" prefHeight="446.0" prefWidth="131.0">
+                           <children>
+                              <ImageView fitHeight="112.0" fitWidth="135.0">
+                                 <image>
+                                    <Image url="@smallPizza.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="127.0" fitWidth="140.0">
+                                 <image>
+                                    <Image url="@chum.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="contactTab" style="-fx-background-color: white;" text="Spacials">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextArea fx:id="spacialsMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="192.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxSpacial" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartSpacial" text="Add Item" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartSpacial" text="Remove Item" />
+                        <VBox layoutX="209.0" layoutY="11.0" prefHeight="459.0" prefWidth="140.0">
+                           <children>
+                              <ImageView fitHeight="126.0" fitWidth="137.0">
+                                 <image>
+                                    <Image url="@salad.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="contactTab" style="-fx-background-color: white;" text="Deserts">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextArea fx:id="desertMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="180.0" AnchorPane.leftAnchor="10.0" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDessert" text="Remove Item" />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDessert" text="Add Item" />
+                        <ComboBox fx:id="cBoxDessert" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <VBox layoutX="195.0" layoutY="10.0" prefHeight="461.0" prefWidth="163.0">
+                           <children>
+                              <ImageView fitHeight="137.0" fitWidth="149.0">
+                                 <image>
+                                    <Image url="@cake.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="contactTab" style="-fx-background-color: white;" text="Drinks">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextArea fx:id="drinkMenuTextArea" layoutX="10.0" layoutY="9.0" prefHeight="464.0" prefWidth="184.0" AnchorPane.leftAnchor="10.0" />
+                        <ComboBox fx:id="cBoxDrink" layoutX="379.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="Choose Your Item..." />
+                        <Button layoutX="421.0" layoutY="376.0" mnemonicParsing="false" onAction="#addItemToCartDrink" text="Add Item" />
+                        <Button layoutX="411.0" layoutY="417.0" mnemonicParsing="false" onAction="#removeItemFromCartDrink" text="Remove Item" />
+                        <VBox layoutX="202.0" layoutY="12.0" prefHeight="456.0" prefWidth="153.0">
+                           <children>
+                              <ImageView fitHeight="124.0" fitWidth="143.0">
+                                 <image>
+                                    <Image url="@sprite.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <VBox prefHeight="479.0" prefWidth="11.0" style="-fx-background-color: #cc0000; -fx-opacity: .75;" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
